@@ -535,7 +535,8 @@ public class Diagram extends ClassicDiagram {
 
             if (nextToken.getType() == TokenType.OPEN_SQUARE) {
                 next(TokenType.OPEN_SQUARE, "Ожидался символ [");
-                next(TokenType.TYPE_INT, "Ожидалось целое");
+                next(TokenType.TYPE_INT, "Ожидалось целое"); // todo int в диаграммы
+                Token n = token;
                 next(TokenType.CLOSE_SQUARE, "Ожидался символ ]");
                 if (tree.findUpVarOrArray(tokenName.getText()) != null) // TODO: 09.02.2019 char[20]
                     return Node.createConst(tree.findUpVarOrArray(tokenName.getText()).node.typeData, new char[20]);
