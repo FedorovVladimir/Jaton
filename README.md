@@ -1,4 +1,5 @@
 # Jaton
+![Image of Yaktocat](https://raw.githubusercontent.com/FedorovVladimir/Jaton/master/Jaton.png)
 
 1. Пример программы на языке Jaton:
 
