@@ -6,11 +6,8 @@ public class Node {
     public TypeData typeData;
 
     public int n;
-    public boolean isInit;
-
-    private Node() {
-        isInit = false;
-    }
+    // TODO: 09.02.2019 init is true
+    public Object value = 0;
 
     public TypeObject getTypeObject() {
         return typeObject;
@@ -30,6 +27,7 @@ public class Node {
         node.name = name;
         node.typeData = typeData;
         node.n = n;
+        node.value = null;
         return node;
     }
 
@@ -41,7 +39,7 @@ public class Node {
         return node;
     }
 
-    static Node createClass(String name) {
+    public static Node createClass(String name) {
         Node node = new Node();
         node.typeObject = TypeObject.CLASS;
         node.name = name;
@@ -55,14 +53,15 @@ public class Node {
         return node;
     }
 
-    public static Node createConst(TypeData typeData) {
+    public static Node createConst(TypeData typeData, Object value) {
         Node node = new Node();
         node.typeObject = TypeObject.CONST;
         node.typeData = typeData;
+        node.value = value;
         return node;
     }
 
-    public static Node createUnknow() {
+    public static Node createUnknown() {
         Node node = new Node();
         node.typeObject = TypeObject.CONST;
         node.typeData = TypeData.UNKNOW;
@@ -78,10 +77,18 @@ public class Node {
         if (typeObject != TypeObject.CLASS)
             str += " " + typeData;
         str += " " + name;
-        if (typeObject == TypeObject.ARRAY)
+        if (typeObject == TypeObject.ARRAY) {
             str += " n=" + n;
-        if (typeObject != TypeObject.CLASS && typeObject != TypeObject.FUNCTION)
-            str += " init-" + isInit;
+            if (value == null) {
+                str += " Value=null";
+            }
+        }
+        if (typeObject == TypeObject.VAR) {
+            if (typeData == TypeData.DOUBLE)
+                str += " Value=" + Double.parseDouble(String.valueOf(value));
+            else
+                str += String.format(" Value='%s'", value);
+        }
 
         return str;
     }

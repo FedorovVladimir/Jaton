@@ -13,8 +13,8 @@ public class ProgramTree {
         this.node = node;
     }
 
-    public ProgramTree(String name) {
-        node = Node.createClass(name);
+    public ProgramTree(Node node) {
+        this.node = node;
         up = null;
         left = null;
         right = null;
@@ -79,5 +79,13 @@ public class ProgramTree {
             i = i.up;
         }
         return i;
+    }
+
+    public ProgramTree getRoot() {
+        ProgramTree root = this;
+        while (root.up != null) {
+            root = root.up;
+        }
+        return root;
     }
 }

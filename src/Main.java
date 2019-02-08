@@ -4,7 +4,7 @@ import parser.Scanner;
 import parser.Token;
 import parser.TokenType;
 
-public class MainTree {
+public class Main {
     public static void main(String[] args) {
         String text;
         try {
@@ -21,11 +21,6 @@ public class MainTree {
 
         Token token = scanner.nextScanner();
         if (token.getType() == TokenType.EOF)
-            System.out.println("Синтаксических ошибок не обнаружено!");
-        else
-            diagram.printError("Лишний текст в конце программы");
-
-        System.out.println();
-        diagram.getTree().getRoot().print(0);
+            System.out.println("--КОНЕЦ--");
     }
 }

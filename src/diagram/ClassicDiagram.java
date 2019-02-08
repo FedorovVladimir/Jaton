@@ -16,9 +16,8 @@ public class ClassicDiagram {
     Token nextToken;
 
     ProgramTree tree;
-    ProgramTree thisTree;
 
-    Deque<ProgramTree> stack = new LinkedList<>();
+    Deque<ProgramTree> callStack = new LinkedList<>();
 
     public ProgramTree getTree() {
         return tree;

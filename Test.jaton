@@ -1,17 +1,6 @@
 class Main {
-
-    double a = 0;
-    char b = 0, c, d = 'd';
-
-    void print() {
-        double e, f = 4;
-        char str[] = new char[3];
-    }
-
+    # первая программа
     public static void main() {
-        while ('4') {
-            char i = 0;
-            i = i + 1;
-        }
+        print("Hello, world!");
     }
 }
