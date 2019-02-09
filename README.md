@@ -46,3 +46,20 @@ class Main {
 j
 2.7
 ```
+4. Консольный ввод и вывод в Jaton осуществляются через команды scan, print и println
+#### Код:
+```
+class Main {
+    public static void main() {
+        double a;
+        print("Введите число: ");
+        scan(a);
+        println("Вы ввели: " + a);
+    }
+}
+```
+#### Вывод:
+```
+Введите число: 1
+Вы ввели: 1
+```
