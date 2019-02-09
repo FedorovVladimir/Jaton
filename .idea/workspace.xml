@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c1f74589-f0d3-4c56-8a3b-d71c74a39c66" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Test.jaton" beforeDir="false" afterPath="$PROJECT_DIR$/Test.jaton" afterDir="false" />
+=======
+>>>>>>> 71642b1d0399ef692ea8c7385726b973c520a833
       <change beforePath="$PROJECT_DIR$/src/diagram/Diagram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/diagram/Diagram.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -13,6 +16,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FUSProjectUsageTrigger">
     <session id="-785542659">
       <usages-collector id="statistics.lifecycle.project">
@@ -104,6 +108,97 @@
         </entry>
       </file>
     </leaf>
+=======
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.88006485">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/diagram/Diagram.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="291">
+                  <caret line="537" column="84" selection-start-line="537" selection-start-column="84" selection-end-line="537" selection-end-column="84" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="method#program#0;class#Diagram#0" />
+                    <element signature="method#semAddClass#0;class#Diagram#0" />
+                    <element signature="method#isFunction#0;class#Diagram#0" />
+                    <element signature="method#function#0;class#Diagram#0" />
+                    <element signature="method#semAddFunction#0;class#Diagram#0" />
+                    <element signature="method#semInLevel#0;class#Diagram#0" />
+                    <element signature="method#semOutLevel#0;class#Diagram#0" />
+                    <element signature="method#isDate#0;class#Diagram#0" />
+                    <element signature="method#date#0;class#Diagram#0" />
+                    <element signature="e#4097#4098#0" expanded="true" />
+                    <element signature="e#4155#4156#0" expanded="true" />
+                    <element signature="method#variable#0;class#Diagram#0" />
+                    <element signature="method#semHasVarOrArray#0;class#Diagram#0" />
+                    <element signature="method#semAddVar#0;class#Diagram#0" />
+                    <element signature="method#semInitVar#0;class#Diagram#0" />
+                    <element signature="method#semAddArray#0;class#Diagram#0" />
+                    <element signature="method#semInitArray#0;class#Diagram#0" />
+                    <element signature="method#semArrayTypes#0;class#Diagram#0" />
+                    <element signature="method#isOperator#0;class#Diagram#0" />
+                    <element signature="e#10639#10640#0" expanded="true" />
+                    <element signature="e#10701#10702#0" expanded="true" />
+                    <element signature="method#assignment#0;class#Diagram#0" />
+                    <element signature="method#inType#0;class#Diagram#0" />
+                    <element signature="e#13018#13019#0" expanded="true" />
+                    <element signature="e#13079#13080#0" expanded="true" />
+                    <element signature="method#loopWhile#0;class#Diagram#0" />
+                    <element signature="method#isExpression#0;class#Diagram#0" />
+                    <element signature="method#expression1#0;class#Diagram#0" />
+                    <element signature="method#expression2#0;class#Diagram#0" />
+                    <element signature="method#expression3#0;class#Diagram#0" />
+                    <element signature="method#toTypeDataPlusMinus#0;class#Diagram#0" />
+                    <element signature="method#expression4#0;class#Diagram#0" />
+                    <element signature="method#toTypeDataSlashStar#0;class#Diagram#0" />
+                    <element signature="method#toTypeDataPercent#0;class#Diagram#0" />
+                    <element signature="method#isNumber#0;class#Diagram#0" />
+                    <element signature="method#expression5#0;class#Diagram#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/objects/Node.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="232">
+                  <caret line="55" column="31" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Main.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="323">
+                  <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Test.jaton">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="51">
+                  <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+>>>>>>> 71642b1d0399ef692ea8c7385726b973c520a833
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -115,6 +210,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>next()</find>
+      <find>stack</find>
+      <find>callStack</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -123,14 +220,22 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/Main.java" />
+=======
+>>>>>>> 71642b1d0399ef692ea8c7385726b973c520a833
         <option value="$PROJECT_DIR$/src/diagram/ClassicDiagram.java" />
+        <option value="$PROJECT_DIR$/src/MainTree.java" />
+        <option value="$PROJECT_DIR$/src/objects/ProgramTree.java" />
         <option value="$PROJECT_DIR$/src/objects/Node.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/Test.jaton" />
         <option value="$PROJECT_DIR$/src/diagram/Diagram.java" />
         <option value="$PROJECT_DIR$/Test.jaton" />
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
@@ -141,6 +246,11 @@
     <option name="x" value="368" />
     <option name="y" value="-15" />
     <option name="width" value="831" />
+=======
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="1294" />
+>>>>>>> 71642b1d0399ef692ea8c7385726b973c520a833
     <option name="height" value="1087" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -149,7 +259,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
+=======
+>>>>>>> 71642b1d0399ef692ea8c7385726b973c520a833
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -163,10 +276,20 @@
               <item name="Jaton" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
+=======
+            <path>
+              <item name="Jaton" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Jaton" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="objects" type="462c0819:PsiDirectoryNode" />
+            </path>
+>>>>>>> 71642b1d0399ef692ea8c7385726b973c520a833
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -175,8 +298,13 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549648704649" />
+=======
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549661717263" />
+>>>>>>> 71642b1d0399ef692ea8c7385726b973c520a833
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -193,7 +321,11 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Application.MainDiagram">
+=======
+  <component name="RunManager" selected="Application.MainScanner">
+>>>>>>> 71642b1d0399ef692ea8c7385726b973c520a833
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Write_Java" />
@@ -233,10 +365,15 @@
     </list>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="Application.MainDiagram" />
         <item itemvalue="Application.MainTree" />
+=======
+>>>>>>> 71642b1d0399ef692ea8c7385726b973c520a833
         <item itemvalue="Application.MainScanner" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.MainTree" />
+        <item itemvalue="Application.MainDiagram" />
       </list>
     </recent_temporary>
   </component>
@@ -252,8 +389,13 @@
       <updated>1549558689657</updated>
       <workItem from="1549558694252" duration="11810000" />
       <workItem from="1549644717965" duration="353000" />
+<<<<<<< HEAD
       <workItem from="1549646248893" duration="56000" />
       <workItem from="1549646306888" duration="1404000" />
+=======
+      <workItem from="1549650250542" duration="9045000" />
+      <workItem from="1549661552838" duration="165000" />
+>>>>>>> 71642b1d0399ef692ea8c7385726b973c520a833
     </task>
     <task id="LOCAL-00001" summary="fix sem functions">
       <created>1549616105834</created>
@@ -262,16 +404,33 @@
       <option name="project" value="LOCAL" />
       <updated>1549616105834</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Добавленна стандартная функция вывода print">
+      <created>1549658411625</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1549658411625</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="13623000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="368" y="-15" width="831" height="1087" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.48588958" />
+=======
+    <option name="totallyTimeSpent" value="21373000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="0" width="1294" height="1087" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.31442463" />
+>>>>>>> 71642b1d0399ef692ea8c7385726b973c520a833
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -280,8 +439,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32994923" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Run" order="2" weight="0.3329918" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+=======
+      <window_info anchor="bottom" id="Run" order="2" weight="0.6425577" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39875388" />
+>>>>>>> 71642b1d0399ef692ea8c7385726b973c520a833
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -289,7 +453,8 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32994923" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32914045" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -299,52 +464,67 @@
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="right" id="Maven" order="9" />
     </layout>
     <layout-to-restore>
-      <window_info id="Image Layers" order="0" />
-      <window_info id="Designer" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.19635417" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="4" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.32994923" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Database" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30875203" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32994923" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.32914045" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.39937106" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32914045" />
+      <window_info anchor="right" id="Maven" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Maven Projects" order="9" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix sem functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix sem functions" />
+    <MESSAGE value="Добавленна стандартная функция вывода print" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавленна стандартная функция вывода print" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/objects/ProgramTree.java</url>
+          <line>46</line>
+          <properties class="objects.ProgramTree" method="print">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/MainAutomatic.java" />
     <entry file="file://$PROJECT_DIR$/src/Diagram/Automatic.java" />
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/MainScanner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -353,47 +533,98 @@
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/Number.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/MainDiagram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+        <state relative-caret-position="340">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/io/Serializable.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/Integer.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/Number.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/io/Serializable.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/Character.java" />
+    <entry file="file://$PROJECT_DIR$/src/parser/Scanner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="168" column="21" selection-start-line="168" selection-start-column="21" selection-end-line="168" selection-end-column="21" />
+        <state relative-caret-position="412">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/Character.java">
+    <entry file="file://$PROJECT_DIR$/src/diagram/ClassicDiagram.java">
+>>>>>>> 71642b1d0399ef692ea8c7385726b973c520a833
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="122" column="41" lean-forward="true" selection-start-line="122" selection-start-column="41" selection-end-line="122" selection-end-column="41" />
+        <state relative-caret-position="341">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#404#405#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/ProgramTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" selection-start-column="7" selection-end-column="14" />
+        <state relative-caret-position="170">
+          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/objects/Node.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/MainScanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test.jaton">
+>>>>>>> 71642b1d0399ef692ea8c7385726b973c520a833
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/objects/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="84" selection-start-line="84" selection-end-line="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/diagram/ClassicDiagram.java">
-      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="764">
           <caret line="53" column="17" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="232">
+          <caret line="55" column="31" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
+>>>>>>> 71642b1d0399ef692ea8c7385726b973c520a833
         </state>
       </provider>
     </entry>
@@ -413,22 +644,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/diagram/Diagram.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="339">
           <caret line="177" column="37" selection-start-line="177" selection-start-column="37" selection-end-line="177" selection-end-column="37" />
+=======
+        <state relative-caret-position="291">
+          <caret line="537" column="84" selection-start-line="537" selection-start-column="84" selection-end-line="537" selection-end-column="84" />
+>>>>>>> 71642b1d0399ef692ea8c7385726b973c520a833
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#program#0;class#Diagram#0" />
             <element signature="method#semAddClass#0;class#Diagram#0" />
             <element signature="method#isFunction#0;class#Diagram#0" />
+            <element signature="method#function#0;class#Diagram#0" />
             <element signature="method#semAddFunction#0;class#Diagram#0" />
+            <element signature="method#semInLevel#0;class#Diagram#0" />
             <element signature="method#semOutLevel#0;class#Diagram#0" />
             <element signature="method#isDate#0;class#Diagram#0" />
-            <element signature="method#semHasArray#0;class#Diagram#0" />
+            <element signature="method#date#0;class#Diagram#0" />
+            <element signature="e#4097#4098#0" expanded="true" />
+            <element signature="e#4155#4156#0" expanded="true" />
+            <element signature="method#variable#0;class#Diagram#0" />
             <element signature="method#semHasVarOrArray#0;class#Diagram#0" />
-            <element signature="method#semAddArray#0;class#Diagram#0" />
             <element signature="method#semAddVar#0;class#Diagram#0" />
+            <element signature="method#semInitVar#0;class#Diagram#0" />
+            <element signature="method#semAddArray#0;class#Diagram#0" />
+            <element signature="method#semInitArray#0;class#Diagram#0" />
+            <element signature="method#semArrayTypes#0;class#Diagram#0" />
+            <element signature="method#isOperator#0;class#Diagram#0" />
+            <element signature="e#10639#10640#0" expanded="true" />
+            <element signature="e#10701#10702#0" expanded="true" />
+            <element signature="method#assignment#0;class#Diagram#0" />
+            <element signature="method#inType#0;class#Diagram#0" />
+            <element signature="e#13018#13019#0" expanded="true" />
+            <element signature="e#13079#13080#0" expanded="true" />
+            <element signature="method#loopWhile#0;class#Diagram#0" />
             <element signature="method#isExpression#0;class#Diagram#0" />
             <element signature="method#expression1#0;class#Diagram#0" />
+            <element signature="method#expression2#0;class#Diagram#0" />
+            <element signature="method#expression3#0;class#Diagram#0" />
+            <element signature="method#toTypeDataPlusMinus#0;class#Diagram#0" />
             <element signature="method#expression4#0;class#Diagram#0" />
+            <element signature="method#toTypeDataSlashStar#0;class#Diagram#0" />
+            <element signature="method#toTypeDataPercent#0;class#Diagram#0" />
+            <element signature="method#isNumber#0;class#Diagram#0" />
+            <element signature="method#expression5#0;class#Diagram#0" />
           </folding>
         </state>
       </provider>

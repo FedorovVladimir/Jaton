@@ -1,15 +1,11 @@
 class Main {
-
-    double a = 0;
-    char b = 0, c, d = 'd';
-
-    void print() {
-        double e, f = 4;
-        char str[] = new char[3];
-    }
-
+    # первая программа
     public static void main() {
+<<<<<<< HEAD
         while ('4') {;
         }
+=======
+        print("Hello, world!");
+>>>>>>> 71642b1d0399ef692ea8c7385726b973c520a833
     }
 }
