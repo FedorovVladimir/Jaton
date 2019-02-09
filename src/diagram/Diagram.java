@@ -13,6 +13,10 @@ public class Diagram extends ClassicDiagram {
     public Diagram(Scanner scanner) {
         super(scanner);
         tree = new ProgramTree(Node.createFunction("print"));
+        tree.setLeft(Node.createFunction("scan"));
+        tree = tree.left;
+        tree.setLeft(Node.createFunction("println"));
+        tree = tree.left;
     }
 
     public void program() {
@@ -39,7 +43,8 @@ public class Diagram extends ClassicDiagram {
 
 
     private boolean isFunction() {
-        return nextToken.getType() == TokenType.VOID || nextToken.getType() == TokenType.PUBLIC;
+        return nextToken.getType() == TokenType.VOID ||
+                nextToken.getType() == TokenType.PUBLIC;
     }
     private void function() {
         next();
@@ -74,18 +79,18 @@ public class Diagram extends ClassicDiagram {
         return nextToken.getType() == TokenType.OPEN_CURLY_BRACE;
     }
     private void operatorsAndDate() {
-        next();
+        next(TokenType.OPEN_CURLY_BRACE, "Ожидался символ {");
         semInLevel();
-        if (nextToken.getType() != TokenType.CLOSE_CURLY_BRACE) {
-            while (nextToken.getType() != TokenType.CLOSE_CURLY_BRACE && nextToken.getType() != TokenType.EOF) {
-                if (isOperator())
-                    operator();
-                else if (isDate())
-                    date();
-                else
-                    printError("Неизвестный символ");
-            }
+
+        while (nextToken.getType() != TokenType.CLOSE_CURLY_BRACE && nextToken.getType() != TokenType.EOF) {
+            if (isOperator())
+                operator();
+            else if (isDate())
+                date();
+            else
+                printError("Неизвестный символ");
         }
+
         semOutLevel();
         next(TokenType.CLOSE_CURLY_BRACE, "Ожидался символ }");
     }
@@ -105,30 +110,24 @@ public class Diagram extends ClassicDiagram {
 
 
     private boolean isDate() {
-        return nextToken.getType() == TokenType.DOUBLE || nextToken.getType() == TokenType.CHAR;
+        return nextToken.getType() == TokenType.DOUBLE ||
+                nextToken.getType() == TokenType.CHAR;
     }
     private void date() {
-        next();
-
         TypeData typeData;
-        if (token.getType() == TokenType.CHAR) {
+        if (nextToken.getType() == TokenType.CHAR) {
             typeData = TypeData.CHAR;
         } else  {
             typeData = TypeData.DOUBLE;
         }
 
-        if (isVariable())
-            variable(typeData);
-        else
-            printError("Ожидался идентификатор");
-
-        while (nextToken.getType() == TokenType.COMMA) {
+        do {
             next();
             if (isVariable())
                 variable(typeData);
             else
                 printError("Ожидался идентификатор");
-        }
+        } while (nextToken.getType() == TokenType.COMMA);
 
         next(TokenType.SEMICOLON, "Ожидался символ ;");
     }
@@ -139,25 +138,15 @@ public class Diagram extends ClassicDiagram {
         return nextToken.getType() == TokenType.ID;
     }
     private void variable(TypeData typeData) {
-        next();
-        Token varName = token;
-        semHasVarOrArray(varName);
+        next(TokenType.ID, "Ожидался идентификатор");
+        Token id = token;
+        semHasVarOrArray(id);
 
-        if (nextToken.getType() == TokenType.ASSIGN) {
-            semAddVar(typeData, varName);
-            next(TokenType.ASSIGN, "Ожидался символ =");
-            if (isExpression()) {
-                Node expression = expression1();
-                semInitVar(varName, expression);
-            }
-            else {
-                printError("Ожидалось выражение");
-            }
-        } else if (nextToken.getType() == TokenType.OPEN_SQUARE) {
+        if (nextToken.getType() == TokenType.OPEN_SQUARE) {
             next(TokenType.OPEN_SQUARE, "Ожидался символ [");
             next(TokenType.CLOSE_SQUARE, "Ожидался символ ]");
 
-            semAddArray(typeData, varName);
+            semAddArray(typeData, id);
 
             if (nextToken.getType() == TokenType.ASSIGN) {
                 next(TokenType.ASSIGN, "Ожидался символ =");
@@ -175,23 +164,28 @@ public class Diagram extends ClassicDiagram {
 
                 semArrayTypes(typeData, typeDataMass);
                 next(TokenType.OPEN_SQUARE, "Ожидался символ [");
-                next(TokenType.TYPE_INT, "Ожидалось целое");
-                Token tokenN = token;
+
+                Node node = expression1();
+                semTypeNumber(node.typeData);
+
                 next(TokenType.CLOSE_SQUARE, "Ожидался символ ]");
-                semInitArray(varName, Integer.parseInt(tokenN.getText()));
+                semInitArray(id, node.getInteger());
                 if (typeData == typeDataMass)
-                    semAddArray(typeData,  varName);
+                    semAddArray(typeData, id);
                 else
                     semPrintError("Не верный тип массива");
-            } else {
-                semAddArray(typeData, varName);
-                next(TokenType.TYPE_INT, "Ожидалось целое"); // TODO: 09.02.2019 add type int
-                Token tokenN = token;
-                next(TokenType.CLOSE_SQUARE, "Ожидался символ ]");
-                semInitArray(varName, Integer.parseInt(tokenN.getText()));
             }
         } else {
-            semAddVar(typeData, varName);
+            semAddVar(typeData, id);
+            if (nextToken.getType() == TokenType.ASSIGN) {
+                next(TokenType.ASSIGN, "Ожидался символ =");
+                if (isExpression()) {
+                    Node expression = expression1();
+                    semInitVar(id, expression);
+                } else {
+                    printError("Ожидалось выражение");
+                }
+            }
         }
     }
     private void semHasVarOrArray(Token varName) {
@@ -230,9 +224,13 @@ public class Diagram extends ClassicDiagram {
         if (typeData != typeDataMass)
             printError("Не верный тип массива");
     }
+    private void semTypeNumber(TypeData typeData) {
+        if (typeData != TypeData.INTEGER && typeData != TypeData.CHAR)
+            printError("Ожидалось целое");
+    }
 
 
-
+    // todo возвращают значения
     private boolean isOperator() {
         return nextToken.getType() == TokenType.SEMICOLON ||
                 isOperatorsAndDate() ||
@@ -240,7 +238,6 @@ public class Diagram extends ClassicDiagram {
                 nextToken.getType() == TokenType.ID;
     }
     private void operator() {
-
         if (nextToken.getType() == TokenType.SEMICOLON)
             next(TokenType.SEMICOLON, "Ожидался символ ;");
         else if (isOperatorsAndDate()) {
@@ -250,33 +247,38 @@ public class Diagram extends ClassicDiagram {
             loopWhile();
         else if (nextToken.getType() == TokenType.ID) {
             next(TokenType.ID, "Ожидался идентификатор");
-            Token nameFunction = token;
-            Token tokenName = token;
+            Token id = token;
+
             if (isAssignment()) {
-                assignment(tokenName);
-            }
-            else if (nextToken.getType() == TokenType.OPEN_PARENTHESIS) {
+                Node node = assignment();
+            } else if (nextToken.getType() == TokenType.OPEN_PARENTHESIS) {
                 next(TokenType.OPEN_PARENTHESIS, "Ожидался символ (");
-                if (isExpression() && nameFunction.getText().equals("print"))
+
+                if (isExpression() && id.getText().equals("print"))
                     print(expression1());
-                if (tree.findUpFunction(tokenName.getText()) == null)
-                    semPrintError("Функция '" + tokenName.getText() + "()' не определена");
+                if (isExpression() && id.getText().equals("println"))
+                    println(expression1());
+                if (isExpression() && id.getText().equals("scan"))
+                    scan(expression1());
+
+                semFindFunction(id);
                 next(TokenType.CLOSE_PARENTHESIS, "Ожидался символ )");
                 next(TokenType.SEMICOLON, "Ожидался символ ;");
             } else if (nextToken.getType() == TokenType.OPEN_SQUARE) {
                 next(TokenType.OPEN_SQUARE, "Ожидался символ [");
 
-                next(TokenType.TYPE_INT, "Ожидалось целое");
-                Token indexArray = token;
-                if (tree.findUpArray(tokenName.getText()) != null) {
-                    Node mass = tree.findUpArray(tokenName.getText()).node;
-                    if (mass.n <= Integer.parseInt(indexArray.getText()))
+                Node node = expression1();
+                semTypeNumber(node.typeData);
+
+                if (tree.findUpArray(id.getText()) != null) {
+                    Node mass = tree.findUpArray(id.getText()).node;
+                    if (mass.n <= node.getInteger())
                         semPrintError("Выход за границу массива");
                 }
                 next(TokenType.CLOSE_SQUARE, "Ожидался символ ]");
 
                 if (isAssignment())
-                    assignment(tokenName);
+                    assignment();
             } else {
                 printError("Неизвестная команда");
             }
@@ -284,8 +286,37 @@ public class Diagram extends ClassicDiagram {
             printError("Неизвестный оператор");
 
     }
-
+    private void semFindFunction(Token id) {
+        if (tree.findUpFunction(id.getText()) == null)
+            semPrintError("Функция '" + id.getText() + "()' не определена");
+    }
+    private void scan(Node expression1) {
+        java.util.Scanner in = new java.util.Scanner(System.in);
+        expression1.value = in.next();
+    }
     private void print(Node expression1) {
+        TypeObject typeObject = expression1.getTypeObject();
+        TypeData typeData = expression1.typeData;
+        Object value = expression1.value;
+        if (typeObject == TypeObject.CONST) {
+            if (typeData == TypeData.DOUBLE) {
+                System.out.print(Double.parseDouble(String.valueOf(value)));
+            } else if (typeData == TypeData.INTEGER) {
+                System.out.print(Integer.parseInt(String.valueOf(value)));
+            } else if (typeData == TypeData.STRING) {
+                System.out.print(value);
+            } else {
+                System.out.println(String.format("%s", value));
+            }
+        } else if (typeObject == TypeObject.VAR) {
+            if (typeData == TypeData.DOUBLE) {
+                System.out.print(Double.parseDouble(String.valueOf(value)));
+            } else {
+                System.out.print(String.format("%s", value));
+            }
+        }
+    }
+    private void println(Node expression1) {
         TypeObject typeObject = expression1.getTypeObject();
         TypeData typeData = expression1.typeData;
         Object value = expression1.value;
@@ -296,28 +327,27 @@ public class Diagram extends ClassicDiagram {
                 System.out.println(Integer.parseInt(String.valueOf(value)));
             } else if (typeData == TypeData.STRING) {
                 System.out.println(value);
+            } else {
+                System.out.println(String.format("%s", value));
             }
-
+        } else if (typeObject == TypeObject.VAR) {
+            if (typeData == TypeData.DOUBLE) {
+                System.out.println(Double.parseDouble(String.valueOf(value)));
+            } else {
+                System.out.println(String.format("%s", value));
+            }
         }
     }
+
 
 
     private boolean isAssignment() {
         return nextToken.getType() == TokenType.ASSIGN;
     }
-    private void assignment(Token tokenName) {
+    private Node assignment() {
         next(TokenType.ASSIGN, "Ожидался символ =");
         if (isExpression()) {
-            Node node = expression1();
-            if(tree.findUpVarOrArray(tokenName.getText()) == null)
-                semPrintError("Переменная или массив '" + tokenName.getText() + "' не найдена");
-            else {
-                if (inType(tree.findUpVarOrArray(tokenName.getText()).node.typeData, node.typeData)) {
-                    Node mass = tree.findUpVarOrArray(tokenName.getText()).node;
-                } else {
-                    semPrintError("Не верный тип");
-                }
-            }
+            return expression1();
         } else  {
             next(TokenType.NEW, "Ожидался new");
             next();
@@ -325,34 +355,13 @@ public class Diagram extends ClassicDiagram {
             if (typeMass != TokenType.DOUBLE && typeMass != TokenType.CHAR)
                 printError("Ожидался тип");
             next(TokenType.OPEN_SQUARE, "Ожидался символ [");
-            next(TokenType.TYPE_INT, "Ожидалось целое");
-            Token tokenN = token;
 
-            if(tree.findUpArray(tokenName.getText()) == null)
-                semPrintError("Массив '" + tokenName.getText() + "' не найден");
-            else {
-                TypeData typeDataMass;
-                if (typeMass == TokenType.CHAR)
-                    typeDataMass = TypeData.CHAR;
-                else
-                    typeDataMass = TypeData.DOUBLE;
-                if (tree.findUpArray(tokenName.getText()).node.typeData  == typeDataMass) {
-                    Node mass = tree.findUpVarOrArray(tokenName.getText()).node;
-                    mass.n = Integer.parseInt(tokenN.getText());
-                } else {
-                    semPrintError("Не верный тип массива");
-                }
-            }
+            Node node = expression1();
+            semTypeNumber(node.typeData);
+
             next(TokenType.CLOSE_SQUARE, "Ожидался символ ]");
-            Node.createArray("", TypeData.DOUBLE, 3);
+            return Node.createArray("", typeMass == TokenType.DOUBLE?TypeData.DOUBLE:TypeData.CHAR, node.getInteger());
         }
-    }
-    private boolean inType(TypeData typeData1, TypeData typeData2) {
-        if (typeData1 == TypeData.DOUBLE && isNumber(typeData2))
-            return true;
-        if (typeData1 == TypeData.INTEGER && isNumber(typeData2) && typeData2 != TypeData.DOUBLE)
-            return true;
-        return typeData1 == TypeData.CHAR && typeData2 == TypeData.CHAR;
     }
 
 
@@ -431,16 +440,23 @@ public class Diagram extends ClassicDiagram {
 
     private Node expression3() {
         Node node = expression4();
-        TypeData typeData = node.typeData;
 
         while (nextToken.getType() == TokenType.PLUS || nextToken.getType() == TokenType.MINUS) {
             next();
             Node node2 = expression4();
-            TypeData typeData2 = node2.typeData;
 
-            node.typeData = toTypeDataPlusMinus(typeData, typeData2);
+            TypeData typeData = toTypeDataPlusMinus(node.typeData, node2.typeData);
             if (typeData == TypeData.UNKNOW)
                 semPrintError("Неопределенный тип");
+
+            if (typeData == TypeData.STRING) {
+                node.value = node.getString() + node2.getString();
+            } else if (typeData == TypeData.DOUBLE) {
+                node.value = node.getDouble() + node2.getDouble();
+            } else {
+                node.value = node.getInteger() + node2.getInteger();
+            }
+            node.typeData = typeData;
         }
         return node;
     }
@@ -542,7 +558,7 @@ public class Diagram extends ClassicDiagram {
                 Token n = token;
                 next(TokenType.CLOSE_SQUARE, "Ожидался символ ]");
                 if (tree.findUpVarOrArray(tokenName.getText()) != null) // TODO: 09.02.2019 char[20]
-                    return Node.createConst(tree.findUpVarOrArray(tokenName.getText()).node.typeData, new char[20]);
+                    return tree.findUpVarOrArray(tokenName.getText()).node;
                 else {
                     semPrintError("Неизвестная переменная");
                     return Node.createUnknown();
@@ -550,7 +566,7 @@ public class Diagram extends ClassicDiagram {
             }
             else {
                 if (tree.findUpVarOrArray(tokenName.getText()) != null)
-                    return Node.createConst(tree.findUpVarOrArray(tokenName.getText()).node.typeData, new char[20]);
+                    return tree.findUpVarOrArray(tokenName.getText()).node;
                 else {
                     semPrintError("Неизвестная переменная");
                     return Node.createUnknown();

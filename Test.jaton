@@ -1,6 +1,8 @@
 class Main {
-    # первая программа
     public static void main() {
-        print("Hello, world!");
+        double a;
+        print("Введите число: ");
+        scan(a);
+        println("Вы ввели: " + a);
     }
 }

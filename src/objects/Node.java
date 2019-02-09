@@ -9,6 +9,37 @@ public class Node {
     // TODO: 09.02.2019 init is true
     public Object value = 0;
 
+    public String getString() {
+        return String.valueOf(value);
+    }
+
+    public double getDouble() {
+        if (typeData == TypeData.DOUBLE)
+            return (double) value;
+        else if (typeData == TypeData.INTEGER)
+            return (int) value;
+        else
+            return (int) String.valueOf(value).charAt(0);
+    }
+
+    public int getInteger() {
+        if (typeData == TypeData.INTEGER)
+            return (int) value;
+        else
+            return (int) String.valueOf(value).charAt(0);
+    }
+
+    public char getChar() {
+        if (typeData == TypeData.CHAR)
+            return String.valueOf(value).charAt(0);
+        return 0;
+    }
+
+    private void printError(String text) {
+        System.out.println("Error: " + text);
+        System.exit(1);
+    }
+
     public TypeObject getTypeObject() {
         return typeObject;
     }
