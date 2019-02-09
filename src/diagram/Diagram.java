@@ -175,23 +175,20 @@ public class Diagram extends ClassicDiagram {
 
                 semArrayTypes(typeData, typeDataMass);
                 next(TokenType.OPEN_SQUARE, "Ожидался символ [");
-<<<<<<< HEAD
                 next(TokenType.TYPE_INT, "Ожидалось целое");
                 Token tokenN = token;
                 next(TokenType.CLOSE_SQUARE, "Ожидался символ ]");
-                semHasArray(varName, tokenN);
+                semInitArray(varName, Integer.parseInt(tokenN.getText()));
                 if (typeData == typeDataMass)
-                    semAddArray(typeData, true, varName, Integer.parseInt(tokenN.getText()));
+                    semAddArray(typeData,  varName);
                 else
                     semPrintError("Не верный тип массива");
             } else {
-                semAddArray(typeData, false, varName, 0);
-=======
+                semAddArray(typeData, varName);
                 next(TokenType.TYPE_INT, "Ожидалось целое"); // TODO: 09.02.2019 add type int
                 Token tokenN = token;
                 next(TokenType.CLOSE_SQUARE, "Ожидался символ ]");
                 semInitArray(varName, Integer.parseInt(tokenN.getText()));
->>>>>>> 71642b1d0399ef692ea8c7385726b973c520a833
             }
         } else {
             semAddVar(typeData, varName);
@@ -302,13 +299,6 @@ public class Diagram extends ClassicDiagram {
             }
 
         }
-
-//        if (typeObject == TypeObject.VAR) {
-//            if (typeData == TypeData.DOUBLE)
-//                System.out.println(Double.parseDouble(String.valueOf(value)));
-//            else
-//                System.out.println(String.format("%s", value));
-//        }
     }
 
 

@@ -1,11 +1,6 @@
 class Main {
     # первая программа
     public static void main() {
-<<<<<<< HEAD
-        while ('4') {;
-        }
-=======
         print("Hello, world!");
->>>>>>> 71642b1d0399ef692ea8c7385726b973c520a833
     }
 }
