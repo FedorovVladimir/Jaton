@@ -9,9 +9,7 @@ class Main {
     }
 
     public static void main() {
-        while ('4') {
-            char i = 0;
-            i = i + 1;
+        while ('4') {;
         }
     }
 }

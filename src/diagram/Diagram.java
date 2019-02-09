@@ -175,8 +175,8 @@ public class Diagram extends ClassicDiagram {
 
                 next(TokenType.OPEN_SQUARE, "Ожидался символ [");
                 next(TokenType.TYPE_INT, "Ожидалось целое");
-                next(TokenType.CLOSE_SQUARE, "Ожидался символ ]");
                 Token tokenN = token;
+                next(TokenType.CLOSE_SQUARE, "Ожидался символ ]");
                 semHasArray(varName, tokenN);
                 if (typeData == typeDataMass)
                     semAddArray(typeData, true, varName, Integer.parseInt(tokenN.getText()));

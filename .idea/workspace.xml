@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1f74589-f0d3-4c56-8a3b-d71c74a39c66" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test.jaton" beforeDir="false" afterPath="$PROJECT_DIR$/Test.jaton" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/diagram/Diagram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/diagram/Diagram.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -34,26 +36,45 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1937743218">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="3" />
+          <entry key="PLAIN_TEXT" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="3" />
+          <entry key="PLAIN_TEXT" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/diagram/ClassicDiagram.java">
+        <entry file="file://$PROJECT_DIR$/src/MainDiagram.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="53" column="17" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="272">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/diagram/Diagram.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="163" column="60" lean-forward="true" selection-start-line="163" selection-start-column="60" selection-end-line="163" selection-end-column="60" />
+            <state relative-caret-position="339">
+              <caret line="177" column="37" selection-start-line="177" selection-start-column="37" selection-end-line="177" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#semAddClass#0;class#Diagram#0" />
@@ -69,6 +90,15 @@
                 <element signature="method#expression1#0;class#Diagram#0" />
                 <element signature="method#expression4#0;class#Diagram#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Test.jaton">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -94,10 +124,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/Test.jaton" />
         <option value="$PROJECT_DIR$/src/diagram/ClassicDiagram.java" />
         <option value="$PROJECT_DIR$/src/objects/Node.java" />
         <option value="$PROJECT_DIR$/src/diagram/Diagram.java" />
+        <option value="$PROJECT_DIR$/Test.jaton" />
       </list>
     </option>
   </component>
@@ -107,8 +137,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1096" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="368" />
+    <option name="y" value="-15" />
     <option name="width" value="831" />
     <option name="height" value="1087" />
   </component>
@@ -118,31 +149,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Write_Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Write_Java" type="462c0819:PsiDirectoryNode" />
+              <item name="Jaton" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Jaton" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Write_Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Write_Java" type="462c0819:PsiDirectoryNode" />
+              <item name="Jaton" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Jaton" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Write_Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Write_Java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="diagram" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Write_Java" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Write_Java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="objects" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -156,7 +175,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549618596802" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549648704649" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -174,7 +193,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MainTree">
+  <component name="RunManager" selected="Application.MainDiagram">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Write_Java" />
@@ -214,8 +233,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainTree" />
         <item itemvalue="Application.MainDiagram" />
+        <item itemvalue="Application.MainTree" />
         <item itemvalue="Application.MainScanner" />
         <item itemvalue="Application.Main" />
       </list>
@@ -233,6 +252,8 @@
       <updated>1549558689657</updated>
       <workItem from="1549558694252" duration="11810000" />
       <workItem from="1549644717965" duration="353000" />
+      <workItem from="1549646248893" duration="56000" />
+      <workItem from="1549646306888" duration="1404000" />
     </task>
     <task id="LOCAL-00001" summary="fix sem functions">
       <created>1549616105834</created>
@@ -245,12 +266,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12163000" />
+    <option name="totallyTimeSpent" value="13623000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="368" y="-15" width="831" height="1087" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19791667" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.48588958" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -259,7 +280,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32994923" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32994923" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3329918" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -331,23 +352,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainDiagram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/Integer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="51" column="36" lean-forward="true" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/Number.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -376,13 +380,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test.jaton">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/objects/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1360">
@@ -392,7 +389,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/diagram/ClassicDiagram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
+        <state relative-caret-position="764">
           <caret line="53" column="17" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -400,10 +397,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="614" selection-start-line="614" selection-end-line="614" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainDiagram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/diagram/Diagram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="163" column="60" lean-forward="true" selection-start-line="163" selection-start-column="60" selection-end-line="163" selection-end-column="60" />
+        <state relative-caret-position="339">
+          <caret line="177" column="37" selection-start-line="177" selection-start-column="37" selection-end-line="177" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#semAddClass#0;class#Diagram#0" />
@@ -419,6 +430,13 @@
             <element signature="method#expression1#0;class#Diagram#0" />
             <element signature="method#expression4#0;class#Diagram#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test.jaton">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
         </state>
       </provider>
     </entry>
