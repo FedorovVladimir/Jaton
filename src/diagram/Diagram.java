@@ -230,7 +230,7 @@ public class Diagram extends ClassicDiagram {
     }
 
 
-    // todo возвращают значения
+
     private boolean isOperator() {
         return nextToken.getType() == TokenType.SEMICOLON ||
                 isOperatorsAndDate() ||
@@ -251,6 +251,7 @@ public class Diagram extends ClassicDiagram {
 
             if (isAssignment()) {
                 Node node = assignment();
+//                tree.findUpVar(id.getText()).node.value = node.value;
             } else if (nextToken.getType() == TokenType.OPEN_PARENTHESIS) {
                 next(TokenType.OPEN_PARENTHESIS, "Ожидался символ (");
 
@@ -258,8 +259,10 @@ public class Diagram extends ClassicDiagram {
                     print(expression1());
                 if (isExpression() && id.getText().equals("println"))
                     println(expression1());
-                if (isExpression() && id.getText().equals("scan"))
-                    scan(expression1());
+                if (id.getText().equals("scan")) {
+                    next();
+                    scan(token);
+                }
 
                 semFindFunction(id);
                 next(TokenType.CLOSE_PARENTHESIS, "Ожидался символ )");
@@ -290,9 +293,9 @@ public class Diagram extends ClassicDiagram {
         if (tree.findUpFunction(id.getText()) == null)
             semPrintError("Функция '" + id.getText() + "()' не определена");
     }
-    private void scan(Node expression1) {
+    private void scan(Token id) {
         java.util.Scanner in = new java.util.Scanner(System.in);
-        expression1.value = in.next();
+        tree.findUpVar(id.getText()).node.value = in.next();
     }
     private void print(Node expression1) {
         TypeObject typeObject = expression1.getTypeObject();
@@ -440,25 +443,37 @@ public class Diagram extends ClassicDiagram {
 
     private Node expression3() {
         Node node = expression4();
+        Node res = Node.createVar("sum", node.typeData);
+        res.value = node.value;
 
         while (nextToken.getType() == TokenType.PLUS || nextToken.getType() == TokenType.MINUS) {
+            Token znak = nextToken;
             next();
             Node node2 = expression4();
 
-            TypeData typeData = toTypeDataPlusMinus(node.typeData, node2.typeData);
+            TypeData typeData = toTypeDataPlusMinus(res.typeData, node2.typeData);
             if (typeData == TypeData.UNKNOW)
                 semPrintError("Неопределенный тип");
-
-            if (typeData == TypeData.STRING) {
-                node.value = node.getString() + node2.getString();
-            } else if (typeData == TypeData.DOUBLE) {
-                node.value = node.getDouble() + node2.getDouble();
+            if (znak.getType() == TokenType.PLUS) {
+                if (typeData == TypeData.STRING) {
+                    res.value = res.getString() + node2.getString();
+                } else if (typeData == TypeData.DOUBLE) {
+                    res.value = res.getDouble() + node2.getDouble();
+                } else {
+                    res.value = res.getInteger() + node2.getInteger();
+                }
             } else {
-                node.value = node.getInteger() + node2.getInteger();
+                if (typeData == TypeData.STRING) {
+                    printError("Не возможно вычесть");
+                } else if (typeData == TypeData.DOUBLE) {
+                    res.value = res.getDouble() - node2.getDouble();
+                } else {
+                    res.value = res.getInteger() - node2.getInteger();
+                }
             }
-            node.typeData = typeData;
+            res.typeData = typeData;
         }
-        return node;
+        return res;
     }
     private TypeData toTypeDataPlusMinus(TypeData typeData1, TypeData typeData2) {
         if (typeData1 == TypeData.STRING || typeData2 == TypeData.STRING) {

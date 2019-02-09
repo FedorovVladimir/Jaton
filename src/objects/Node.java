@@ -15,9 +15,9 @@ public class Node {
 
     public double getDouble() {
         if (typeData == TypeData.DOUBLE)
-            return (double) value;
+            return Double.parseDouble((String) value);
         else if (typeData == TypeData.INTEGER)
-            return (int) value;
+            return Integer.parseInt((String) value);
         else
             return (int) String.valueOf(value).charAt(0);
     }

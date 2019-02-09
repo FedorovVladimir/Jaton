@@ -4,13 +4,6 @@
     <list default="true" id="c1f74589-f0d3-4c56-8a3b-d71c74a39c66" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test.jaton" beforeDir="false" afterPath="$PROJECT_DIR$/Test.jaton" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diagrams/expretion.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/diagrams/expretion.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diagrams/expretion.xml" beforeDir="false" afterPath="$PROJECT_DIR$/diagrams/expretion.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diagrams/lab_1.docx" beforeDir="false" afterPath="$PROJECT_DIR$/diagrams/lab_1.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diagrams/program.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/diagrams/program.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diagrams/program.xml" beforeDir="false" afterPath="$PROJECT_DIR$/diagrams/program.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diagrams/variable.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/diagrams/variable.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diagrams/variable.xml" beforeDir="false" afterPath="$PROJECT_DIR$/diagrams/variable.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/diagram/Diagram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/diagram/Diagram.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/objects/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Node.java" afterDir="false" />
     </list>
@@ -40,8 +33,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/diagram/Diagram.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="189">
-                  <caret line="340" lean-forward="true" selection-start-line="340" selection-end-line="340" />
+                <state relative-caret-position="-639">
+                  <caret line="345" lean-forward="true" selection-start-line="345" selection-end-line="345" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="method#Diagram#0;class#Diagram#0" />
@@ -49,7 +42,6 @@
                     <element signature="method#semAddClass#0;class#Diagram#0" />
                     <element signature="method#isFunction#0;class#Diagram#0" />
                     <element signature="method#function#0;class#Diagram#0" />
-                    <element signature="method#operatorsAndDate#0;class#Diagram#0" />
                     <element signature="method#semInLevel#0;class#Diagram#0" />
                     <element signature="method#semOutLevel#0;class#Diagram#0" />
                     <element signature="method#isDate#0;class#Diagram#0" />
@@ -67,18 +59,18 @@
                     <element signature="method#isOperator#0;class#Diagram#0" />
                     <element signature="method#operator#0;class#Diagram#0" />
                     <element signature="method#semFindFunction#0;class#Diagram#0" />
+                    <element signature="method#scan#0;class#Diagram#0" />
                     <element signature="method#print#0;class#Diagram#0" />
                     <element signature="method#print#1;class#Diagram#0" />
                     <element signature="e#11427#11490#1" />
-                    <element signature="e#12389#12390#0" expanded="true" />
+                    <element signature="e#12499#12500#0" expanded="true" />
                     <element signature="method#assignment#0;class#Diagram#0" />
                     <element signature="e#11235#11297#1" />
-                    <element signature="e#13240#13241#0" expanded="true" />
+                    <element signature="e#13350#13351#0" expanded="true" />
                     <element signature="method#loopWhile#0;class#Diagram#0" />
                     <element signature="method#isExpression#0;class#Diagram#0" />
                     <element signature="method#expression1#0;class#Diagram#0" />
                     <element signature="method#expression2#0;class#Diagram#0" />
-                    <element signature="method#expression3#0;class#Diagram#0" />
                     <element signature="method#toTypeDataPlusMinus#0;class#Diagram#0" />
                     <element signature="method#expression4#0;class#Diagram#0" />
                     <element signature="method#toTypeDataSlashStar#0;class#Diagram#0" />
@@ -98,8 +90,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Test.jaton">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+                <state relative-caret-position="119">
+                  <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
                 </state>
               </provider>
             </entry>
@@ -133,8 +125,8 @@
         <option value="$PROJECT_DIR$/src/objects/ProgramTree.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/objects/Node.java" />
-        <option value="$PROJECT_DIR$/Test.jaton" />
         <option value="$PROJECT_DIR$/src/diagram/Diagram.java" />
+        <option value="$PROJECT_DIR$/Test.jaton" />
       </list>
     </option>
   </component>
@@ -175,7 +167,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549727000733" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549730842687" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -289,11 +281,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549705882494</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Ввод и вывод">
+      <created>1549727027619</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1549727027619</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38831000" />
+    <option name="totallyTimeSpent" value="42604000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1507" height="1087" extended-state="0" />
@@ -369,7 +368,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix sem functions" />
     <MESSAGE value="Вроде работает" />
-    <option name="LAST_COMMIT_MESSAGE" value="Вроде работает" />
+    <MESSAGE value="Ввод и вывод" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ввод и вывод" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -384,6 +384,11 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="res" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/MainAutomatic.java" />
@@ -442,24 +447,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="31" column="27" lean-forward="true" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
-          <folding>
-            <element signature="e#228#229#0" expanded="true" />
-            <element signature="e#272#273#0" expanded="true" />
-            <element signature="e#1057#1058#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainTree.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
           <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+          <folding>
+            <element signature="e#228#229#0" expanded="true" />
+            <element signature="e#272#273#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -474,17 +478,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test.jaton">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/diagram/Diagram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="340" lean-forward="true" selection-start-line="340" selection-end-line="340" />
+        <state relative-caret-position="-639">
+          <caret line="345" lean-forward="true" selection-start-line="345" selection-end-line="345" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Diagram#0;class#Diagram#0" />
@@ -492,7 +489,6 @@
             <element signature="method#semAddClass#0;class#Diagram#0" />
             <element signature="method#isFunction#0;class#Diagram#0" />
             <element signature="method#function#0;class#Diagram#0" />
-            <element signature="method#operatorsAndDate#0;class#Diagram#0" />
             <element signature="method#semInLevel#0;class#Diagram#0" />
             <element signature="method#semOutLevel#0;class#Diagram#0" />
             <element signature="method#isDate#0;class#Diagram#0" />
@@ -510,18 +506,18 @@
             <element signature="method#isOperator#0;class#Diagram#0" />
             <element signature="method#operator#0;class#Diagram#0" />
             <element signature="method#semFindFunction#0;class#Diagram#0" />
+            <element signature="method#scan#0;class#Diagram#0" />
             <element signature="method#print#0;class#Diagram#0" />
             <element signature="method#print#1;class#Diagram#0" />
             <element signature="e#11427#11490#1" />
-            <element signature="e#12389#12390#0" expanded="true" />
+            <element signature="e#12499#12500#0" expanded="true" />
             <element signature="method#assignment#0;class#Diagram#0" />
             <element signature="e#11235#11297#1" />
-            <element signature="e#13240#13241#0" expanded="true" />
+            <element signature="e#13350#13351#0" expanded="true" />
             <element signature="method#loopWhile#0;class#Diagram#0" />
             <element signature="method#isExpression#0;class#Diagram#0" />
             <element signature="method#expression1#0;class#Diagram#0" />
             <element signature="method#expression2#0;class#Diagram#0" />
-            <element signature="method#expression3#0;class#Diagram#0" />
             <element signature="method#toTypeDataPlusMinus#0;class#Diagram#0" />
             <element signature="method#expression4#0;class#Diagram#0" />
             <element signature="method#toTypeDataSlashStar#0;class#Diagram#0" />
@@ -530,6 +526,13 @@
             <element signature="method#expression5#0;class#Diagram#0" />
             <element signature="method#expression6#0;class#Diagram#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test.jaton">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
         </state>
       </provider>
     </entry>

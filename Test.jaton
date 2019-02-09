@@ -1,8 +1,10 @@
 class Main {
     public static void main() {
-        double a;
-        print("Введите число: ");
+        double a, b;
+        print("Введите первое слагаемое: ");
         scan(a);
-        println("Вы ввели: " + a);
+        print("Введите второе слагаемое: ");
+        scan(b);
+        println(a + " - " + b + " = " + (a - b));
     }
 }
