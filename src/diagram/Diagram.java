@@ -440,9 +440,9 @@ public class Diagram extends ClassicDiagram {
                 }
                 next(TokenType.CLOSE_PARENTHESIS, "Ожидался символ )");
                 if (fInit) {
-                    fInits.add(true);
+                    fInits.push(true);
                 } else {
-                    fInits.add(false);
+                    fInits.push(false);
                 }
 
                 if (isOperator()) {
@@ -452,7 +452,7 @@ public class Diagram extends ClassicDiagram {
                     printError("Ожидался оператор");
                 }
 
-                fInits.poll();
+                fInits.pop();
                 if (fInit) {
                     scanner.setNumberCol(col);
                     scanner.setNumberRow(row);

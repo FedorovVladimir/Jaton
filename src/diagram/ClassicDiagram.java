@@ -10,7 +10,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class ClassicDiagram {
-    protected Queue<Boolean> fInits = new LinkedList<>();
+    protected Deque<Boolean> fInits = new LinkedList<>();
 
     protected Scanner scanner;
 

@@ -24,7 +24,7 @@ public class Main {
 
 
         Token token = scanner.nextScanner();
-        if (token.getType() == TokenType.EOF)
-            System.out.println("--КОНЕЦ--");
+        if (token.getType() != TokenType.EOF)
+            System.out.println("--Error--");
     }
 }
