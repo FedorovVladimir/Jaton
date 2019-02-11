@@ -25,14 +25,14 @@ public class Node {
         if (typeData == TypeData.DOUBLE)
             return Double.parseDouble(String.valueOf(value));
         else if (typeData == TypeData.INTEGER)
-            return Integer.parseInt((String) value);
+            return Integer.parseInt(String.valueOf(value));
         else
             return (int) String.valueOf(value).charAt(0);
     }
 
     public int getInteger() {
-        if (typeData == TypeData.INTEGER)
-            return (int) value;
+        if (typeData == TypeData.INTEGER || typeData == TypeData.DOUBLE)
+            return (int) Double.parseDouble(String.valueOf(value));
         else
             return (int) String.valueOf(value).charAt(0);
     }

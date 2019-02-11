@@ -7,8 +7,10 @@ import parser.TokenType;
 
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class ClassicDiagram {
+    protected Queue<Boolean> fInits = new LinkedList<>();
 
     protected Scanner scanner;
 
@@ -51,6 +53,8 @@ public class ClassicDiagram {
     }
 
     void semPrintError(String text) {
-        System.out.println(text + " строка " + scanner.getNumberRow() + ", столбец " + scanner.getNumberCol());
+        if (fInits.peek()) {
+            System.out.println(text + " строка " + scanner.getNumberRow() + ", столбец " + scanner.getNumberCol());
+        }
     }
 }

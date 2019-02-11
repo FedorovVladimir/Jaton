@@ -9,8 +9,6 @@ import parser.Token;
 import parser.TokenType;
 
 public class Diagram extends ClassicDiagram {
-
-    private boolean fInit = false;
     private int number = -1;
 
     public Diagram(Scanner scanner) {
@@ -40,7 +38,7 @@ public class Diagram extends ClassicDiagram {
         next(TokenType.CLOSE_CURLY_BRACE, "Ожидался символ }");
     }
     private void interAddClass() {
-        if (fInit)
+        if (fInits.peek())
             semAddClass();
     }
     private void semAddClass() {
@@ -62,6 +60,7 @@ public class Diagram extends ClassicDiagram {
         if (token.getType() == TokenType.VOID) {
             next(TokenType.ID, "Ожидался идентификатор");
             name = token;
+            setFlag(false);
         } else {
             next(TokenType.STATIC, "Ожидался static");
             next(TokenType.VOID, "Ожидался void");
@@ -72,10 +71,13 @@ public class Diagram extends ClassicDiagram {
         next(TokenType.CLOSE_PARENTHESIS, "Ожидался символ )");
         semAddFunction(scanner.getNumberSymbol(), name);
 
-        if (isOperatorsAndDate())
+        if (isOperatorsAndDate()) {
             operatorsAndDate();
-        else
+        }
+        else {
             printError("Ожидался символ {");
+        }
+        setFlag(true);
     }
     private void semAddFunction(int numberSymbol,  Token name) {
         if (tree.findUpFunction(name.getText()) != null)
@@ -85,8 +87,10 @@ public class Diagram extends ClassicDiagram {
             Node f = Node.createFunction(name.getText());
             f.setPtr(numberSymbol);
             tree.setLeft(f);
-            tree = tree.left;
+        } else {
+            tree.setLeft(Node.createEmptyNode());
         }
+        tree = tree.left;
     }
 
 
@@ -111,14 +115,14 @@ public class Diagram extends ClassicDiagram {
         next(TokenType.CLOSE_CURLY_BRACE, "Ожидался символ }");
     }
     private void semInLevel() {
-        if (fInit) {
+        if (fInits.peek()) {
             callStack.push(tree);
             tree.setRight(Node.createEmptyNode());
             tree = tree.right;
         }
     }
     private void semOutLevel() {
-        if (fInit) {
+        if (fInits.peek()) {
             tree = callStack.pop();
             if (tree.node.getTypeObject() == TypeObject.EMPTY) {
                 tree.setLeft(Node.createEmptyNode());
@@ -213,7 +217,7 @@ public class Diagram extends ClassicDiagram {
             semPrintError("Идентификатор " + varName.getText() + " уже использовался");
     }
     private void interAddVar(TypeData typeData, Token name) {
-        if (fInit)
+        if (fInits.peek())
             semAddVar(typeData, name);
     }
     private void semAddVar(TypeData typeData, Token name) {
@@ -225,7 +229,7 @@ public class Diagram extends ClassicDiagram {
         }
     }
     private void interInitVar(Token varName, Node expression) {
-        if (fInit)
+        if (fInits.peek())
             semInitVar(varName, expression);
     }
     private void semInitVar(Token varName, Node expression) {
@@ -233,7 +237,7 @@ public class Diagram extends ClassicDiagram {
         node.value = expression.value;
     }
     private void interAddArray(TypeData typeData, Token name) {
-        if (fInit) {
+        if (fInits.peek()) {
             semAddArray(typeData, name);
         }
     }
@@ -246,7 +250,7 @@ public class Diagram extends ClassicDiagram {
         }
     }
     private void interInitArray(Token varName, int parseInt) {
-        if (fInit)
+        if (fInits.peek())
             semInitArray(varName, parseInt);
     }
     private void semInitArray(Token varName, int parseInt) {
@@ -288,9 +292,10 @@ public class Diagram extends ClassicDiagram {
 
             if (isAssignment()) {
                 Node node = assignment();
-                if (fInit) {
+                if (fInits.peek()) {
                     tree.findUpVar(id.getText()).node.value = node.value;
                 }
+                next(TokenType.SEMICOLON, "Ожидался символ ;");
             } else if (nextToken.getType() == TokenType.OPEN_PARENTHESIS) {
                 next(TokenType.OPEN_PARENTHESIS, "Ожидался символ (");
 
@@ -321,6 +326,7 @@ public class Diagram extends ClassicDiagram {
 
                 if (isAssignment())
                     assignment();
+                next(TokenType.SEMICOLON, "Ожидался символ ;");
             } else {
                 printError("Неизвестная команда");
             }
@@ -332,13 +338,13 @@ public class Diagram extends ClassicDiagram {
             semPrintError("Функция '" + id.getText() + "()' не определена");
     }
     private void scan(Token id) {
-        if (fInit) {
+        if (fInits.peek()) {
             java.util.Scanner in = new java.util.Scanner(System.in);
             tree.findUpVar(id.getText()).node.value = in.next();
         }
     }
     private void print(Node expression1) {
-        if (fInit) {
+        if (fInits.peek()) {
             TypeObject typeObject = expression1.getTypeObject();
             TypeData typeData = expression1.typeData;
             Object value = expression1.value;
@@ -362,7 +368,7 @@ public class Diagram extends ClassicDiagram {
         }
     }
     private void println(Node expression1) {
-        if (fInit) {
+        if (fInits.peek()) {
             TypeObject typeObject = expression1.getTypeObject();
             TypeData typeData = expression1.typeData;
             Object value = expression1.value;
@@ -419,18 +425,52 @@ public class Diagram extends ClassicDiagram {
     private void loopWhile() {
         next(TokenType.WHILE, "Ожидался while");
         next(TokenType.OPEN_PARENTHESIS, "Ожидался символ (");
-        if (isExpression()) {
-            Node node = expression1();
-            if (node.typeData != TypeData.CHAR)
-                semPrintError("Ожидался тип char");
+
+        if (fInits.peek()) {
+            boolean fInit = false;
+            do {
+                int col = scanner.getNumberCol();
+                int row = scanner.getNumberRow();
+                int symbol = scanner.getNumberSymbol();
+                if (isExpression() || fInit) {
+                    Node node = expression1();
+                    fInit = (node.getInteger() > 0);
+                } else {
+                    printError("Ожидалось выражение");
+                }
+                next(TokenType.CLOSE_PARENTHESIS, "Ожидался символ )");
+                if (fInit) {
+                    fInits.add(true);
+                } else {
+                    fInits.add(false);
+                }
+
+                if (isOperator()) {
+                    operator();
+                }
+                else {
+                    printError("Ожидался оператор");
+                }
+
+                fInits.poll();
+                if (fInit) {
+                    scanner.setNumberCol(col);
+                    scanner.setNumberRow(row);
+                    scanner.setNumberSymbol(symbol);
+
+                }
+            } while (fInit);
+        } else {
+            if (isExpression()) {
+                expression1();
+            } else
+                printError("Ожидалось выражение");
+            next(TokenType.CLOSE_PARENTHESIS, "Ожидался символ )");
+            if (isOperator())
+                operator();
+            else
+                printError("Ожидался оператор");
         }
-        else
-            printError("Ожидалось выражение");
-        next(TokenType.CLOSE_PARENTHESIS, "Ожидался символ )");
-        if (isOperator())
-            operator();
-        else
-            printError("Ожидался оператор");
     }
 
 
@@ -627,12 +667,10 @@ public class Diagram extends ClassicDiagram {
                 if (tree.findUpVarOrArray(tokenName.getText()) != null)
                     return tree.findUpVarOrArray(tokenName.getText()).node;
                 else {
-                    if (fInit) {
+                    if (fInits.peek()) {
                         semPrintError("Неизвестная переменная");
-                        return Node.createUnknown();
-                    } else {
-                        return Node.createUnknown();
                     }
+                    return Node.createUnknown();
                 }
             }
         } else if (token.getType() == TokenType.OPEN_PARENTHESIS) {
@@ -655,6 +693,7 @@ public class Diagram extends ClassicDiagram {
     }
 
     public void setFlag(boolean b) {
-        fInit = b;
+        fInits.poll();
+        fInits.add(b);
     }
 }

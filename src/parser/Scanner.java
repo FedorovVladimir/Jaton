@@ -243,5 +243,15 @@ public class Scanner {
         return numberSymbol;
     }
 
+    public void setNumberCol(int numberCol) {
+        this.numberCol = numberCol;
+    }
 
+    public void setNumberRow(int numberRow) {
+        this.numberRow = numberRow;
+    }
+
+    public void setNumberSymbol(int numberSymbol) {
+        this.numberSymbol = numberSymbol;
+    }
 }
