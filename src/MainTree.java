@@ -17,15 +17,24 @@ public class MainTree {
         Scanner scanner = new Scanner(text);
         Diagram diagram = new Diagram(scanner);
 
+        diagram.setFlag(false);
         diagram.program();
-
-        Token token = scanner.nextScanner();
-        if (token.getType() == TokenType.EOF)
-            System.out.println("Синтаксических ошибок не обнаружено!");
-        else
-            diagram.printError("Лишний текст в конце программы");
+        diagram.getTree().getRoot().print(0);
 
         System.out.println();
+        System.out.println();
+
+        diagram.setFlag(true);
+        diagram.program();
         diagram.getTree().getRoot().print(0);
+
+
+        Token token = scanner.nextScanner();
+        if (token.getType() == TokenType.EOF) {
+            System.out.println("Синтаксических ошибок не обнаружено!");
+        }
+        else {
+            diagram.printError("Лишний текст в конце программы");
+        }
     }
 }

@@ -6,8 +6,16 @@ public class Node {
     public TypeData typeData;
 
     public int n;
-    // TODO: 09.02.2019 init is true
     public Object value = 0;
+    public int ptr = 0;
+
+    public void setPtr(int ptr) {
+        this.ptr = ptr;
+    }
+
+    public int getPtr() {
+        return ptr;
+    }
 
     public String getString() {
         return String.valueOf(value);
@@ -15,7 +23,7 @@ public class Node {
 
     public double getDouble() {
         if (typeData == TypeData.DOUBLE)
-            return Double.parseDouble((String) value);
+            return Double.parseDouble(String.valueOf(value));
         else if (typeData == TypeData.INTEGER)
             return Integer.parseInt((String) value);
         else
@@ -119,6 +127,8 @@ public class Node {
                 str += " Value=" + Double.parseDouble(String.valueOf(value));
             else
                 str += String.format(" Value='%s'", value);
+        } else if (typeObject == TypeObject.FUNCTION) {
+            str += " ptr=" + ptr;
         }
 
         return str;

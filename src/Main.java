@@ -17,7 +17,11 @@ public class Main {
         Scanner scanner = new Scanner(text);
         Diagram diagram = new Diagram(scanner);
 
+        diagram.setFlag(false);
         diagram.program();
+        diagram.setFlag(true);
+        diagram.program();
+
 
         Token token = scanner.nextScanner();
         if (token.getType() == TokenType.EOF)

@@ -10,7 +10,7 @@ import java.util.LinkedList;
 
 public class ClassicDiagram {
 
-    private Scanner scanner;
+    protected Scanner scanner;
 
     Token token;
     Token nextToken;

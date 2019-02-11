@@ -5,6 +5,7 @@ import parser.TokenType;
 
 public class Scanner {
 
+    private String oldText;
     private String text;
     private int numberRow;
     private int numberCol;
@@ -21,9 +22,10 @@ public class Scanner {
     private TokenType[] tokenCompareEquallyMass = {TokenType.LESS_EQUALLY, TokenType.GREAT_EQUALLY, TokenType.EQUALLY};
 
     public Scanner(String text) {
-        this.text = text;
+        this.text = oldText = text;
         numberRow = 1;
         numberCol = 1;
+        numberSymbol = 0;
     }
 
     public Token nextScanner() {
@@ -229,4 +231,17 @@ public class Scanner {
         numberRow = oldNumberRow;
         numberSymbol = oldNumberSymbol;
     }
+
+    public void reset() {
+        this.text = oldText;
+        numberRow = 1;
+        numberCol = 1;
+        numberSymbol = 0;
+    }
+
+    public int getNumberSymbol() {
+        return numberSymbol;
+    }
+
+
 }
