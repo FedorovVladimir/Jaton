@@ -1,26 +1,16 @@
 class Main {
+
+    double i = 10;
+
     public static void main() {
-        println("Сумма первых k членов арфметической прогрессии");
+        world();
+    }
 
-        double a1;
-        print("Введите а1: ");
-        scan(a1);
-
-        double d;
-        print("Введите d: ");
-        scan(d);
-
-        double k;
-        print("Введите k: ");
-        scan(k);
-
-        double s;
-        double i = k;
+    void world() {
+        println(i);
         while(i) {
-            s = s + i;
-            i = i - d;
+            i = i - 1;
+            world();
         }
-
-        println("Сумма первых " + k + " членов арифметицеской прогрессии(d = " + d + ") равна " + s);
     }
 }

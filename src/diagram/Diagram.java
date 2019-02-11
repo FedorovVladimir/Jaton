@@ -8,8 +8,13 @@ import parser.Scanner;
 import parser.Token;
 import parser.TokenType;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 public class Diagram extends ClassicDiagram {
     private int number = -1;
+
+    Deque<Integer> callFunctions = new LinkedList<>();
 
     public Diagram(Scanner scanner) {
         super(scanner);
@@ -60,12 +65,13 @@ public class Diagram extends ClassicDiagram {
         if (token.getType() == TokenType.VOID) {
             next(TokenType.ID, "Ожидался идентификатор");
             name = token;
-            setFlag(false);
+            fInits.push(false);
         } else {
             next(TokenType.STATIC, "Ожидался static");
             next(TokenType.VOID, "Ожидался void");
             next(TokenType.MAIN, "Ожидался main");
             name = token;
+            fInits.push(fInits.peek());
         }
         next(TokenType.OPEN_PARENTHESIS, "Ожидался символ (");
         next(TokenType.CLOSE_PARENTHESIS, "Ожидался символ )");
@@ -77,7 +83,7 @@ public class Diagram extends ClassicDiagram {
         else {
             printError("Ожидался символ {");
         }
-        setFlag(true);
+        fInits.pop();
     }
     private void semAddFunction(int numberSymbol,  Token name) {
         if (tree.findUpFunction(name.getText()) != null)
@@ -299,18 +305,47 @@ public class Diagram extends ClassicDiagram {
             } else if (nextToken.getType() == TokenType.OPEN_PARENTHESIS) {
                 next(TokenType.OPEN_PARENTHESIS, "Ожидался символ (");
 
-                if (isExpression() && id.getText().equals("print"))
+                if (isExpression() && id.getText().equals("print")) {
                     print(expression1());
-                if (isExpression() && id.getText().equals("println"))
+                    next(TokenType.CLOSE_PARENTHESIS, "Ожидался символ )");
+                    next(TokenType.SEMICOLON, "Ожидался символ ;");
+                    return;
+                }
+                else if (isExpression() && id.getText().equals("println")) {
                     println(expression1());
-                if (id.getText().equals("scan")) {
+                    next(TokenType.CLOSE_PARENTHESIS, "Ожидался символ )");
+                    next(TokenType.SEMICOLON, "Ожидался символ ;");
+                    return;
+                }
+                else if (id.getText().equals("scan")) {
                     next();
                     scan(token);
+                    next(TokenType.CLOSE_PARENTHESIS, "Ожидался символ )");
+                    next(TokenType.SEMICOLON, "Ожидался символ ;");
+                    return;
                 }
 
                 semFindFunction(id);
                 next(TokenType.CLOSE_PARENTHESIS, "Ожидался символ )");
                 next(TokenType.SEMICOLON, "Ожидался символ ;");
+
+                if (fInits.peek()) {
+                    int col = scanner.getNumberCol();
+                    int row = scanner.getNumberRow();
+                    int symbol = scanner.getNumberSymbol();
+                    Token token1 = token;
+                    Token nextToken1 = nextToken;
+
+                    int symbolFunction = tree.findUpFunction(id.getText()).node.ptr; // TODO: 12.02.2019
+                    scanner.setNumberSymbol(symbolFunction);
+                    operatorsAndDate();
+
+                    token = token1;
+                    nextToken = nextToken1;
+                    scanner.setNumberCol(col);
+                    scanner.setNumberRow(row);
+                    scanner.setNumberSymbol(symbol);
+                }
             } else if (nextToken.getType() == TokenType.OPEN_SQUARE) {
                 next(TokenType.OPEN_SQUARE, "Ожидался символ [");
 
@@ -334,8 +369,10 @@ public class Diagram extends ClassicDiagram {
             printError("Неизвестный оператор");
     }
     private void semFindFunction(Token id) {
-        if (tree.findUpFunction(id.getText()) == null)
-            semPrintError("Функция '" + id.getText() + "()' не определена");
+        if (fInits.peek()) {
+            if (tree.findUpFunction(id.getText()) == null)
+                semPrintError("Функция '" + id.getText() + "()' не определена");
+        }
     }
     private void scan(Token id) {
         if (fInits.peek()) {
@@ -653,10 +690,10 @@ public class Diagram extends ClassicDiagram {
 
             if (nextToken.getType() == TokenType.OPEN_SQUARE) {
                 next(TokenType.OPEN_SQUARE, "Ожидался символ [");
-                next(TokenType.TYPE_INT, "Ожидалось целое"); // todo int в диаграммы
+                next(TokenType.TYPE_INT, "Ожидалось целое");
                 Token n = token;
                 next(TokenType.CLOSE_SQUARE, "Ожидался символ ]");
-                if (tree.findUpVarOrArray(tokenName.getText()) != null) // TODO: 09.02.2019 char[20]
+                if (tree.findUpVarOrArray(tokenName.getText()) != null)
                     return tree.findUpVarOrArray(tokenName.getText()).node;
                 else {
                     semPrintError("Неизвестная переменная");
@@ -687,7 +724,7 @@ public class Diagram extends ClassicDiagram {
             return Node.createConst(TypeData.DOUBLE, Double.parseDouble(token.getText()));
         } else if (token.getType() == TokenType.TYPE_CHAR) {
             return Node.createConst(TypeData.CHAR, token.getText());
-        } else { // TODO: 09.02.2019 string int
+        } else {
             return Node.createConst(TypeData.STRING, token.getText());
         }
     }
