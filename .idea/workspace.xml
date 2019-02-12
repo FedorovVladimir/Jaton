@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test.jaton" beforeDir="false" afterPath="$PROJECT_DIR$/Test.jaton" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/diagram/Diagram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/diagram/Diagram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Node.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,14 +15,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5681405">
+    <splitter split-orientation="horizontal" split-proportion="0.6474864">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/MainTree.java">
+            <entry file="file://$PROJECT_DIR$/src/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="442">
-                  <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+                <state relative-caret-position="374">
+                  <caret line="22" selection-start-line="22" selection-end-line="22" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -32,62 +33,63 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/diagram/Diagram.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="343" column="42" selection-start-line="343" selection-start-column="42" selection-end-line="343" selection-end-column="42" />
+                <state relative-caret-position="189">
+                  <caret line="687" selection-start-line="687" selection-end-line="687" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="method#Diagram#0;class#Diagram#0" />
-                    <element signature="e#1217#1280#0" />
-                    <element signature="e#1217#1417#0" />
-                    <element signature="method#isFunction#0;class#Diagram#0" />
-                    <element signature="e#2301#2643#0" />
-                    <element signature="e#2530#2603#1" />
-                    <element signature="e#3203#3204#0" expanded="true" />
-                    <element signature="e#3427#3576#0" />
-                    <element signature="e#3569#3815#0" />
-                    <element signature="e#3660#3874#1" />
-                    <element signature="method#isDate#0;class#Diagram#0" />
-                    <element signature="e#3894#4393#0" />
-                    <element signature="e#4178#4237#1" />
-                    <element signature="e#4947#4948#0" expanded="true" />
-                    <element signature="e#4494#6418#0" />
-                    <element signature="e#5770#6083#1" />
-                    <element signature="method#semHasVarOrArray#0;class#Diagram#0" />
-                    <element signature="e#6506#6601#0" />
-                    <element signature="method#semAddVar#0;class#Diagram#0" />
-                    <element signature="e#6960#7057#0" />
-                    <element signature="e#7127#7289#0" />
-                    <element signature="e#7381#7518#0" />
-                    <element signature="e#7338#7376#1" />
-                    <element signature="e#7523#7847#0" />
-                    <element signature="e#7736#7832#0" />
-                    <element signature="e#8043#8345#0" />
-                    <element signature="method#semArrayTypes#0;class#Diagram#0" />
-                    <element signature="method#semTypeNumber#0;class#Diagram#0" />
-                    <element signature="method#isOperator#0;class#Diagram#0" />
-                    <element signature="e#11431#11656#0" />
-                    <element signature="e#11185#11385#0" />
-                    <element signature="e#11234#11379#1" />
-                    <element signature="e#11390#12389#0" />
-                    <element signature="e#12971#14075#0" />
-                    <element signature="e#12488#12551#1" />
-                    <element signature="e#15646#15647#0" expanded="true" />
-                    <element signature="method#assignment#0;class#Diagram#0" />
-                    <element signature="e#13340#13402#1" />
-                    <element signature="e#16497#16498#0" expanded="true" />
-                    <element signature="e#15033#16673#0" />
-                    <element signature="e#16681#17206#0" />
-                    <element signature="e#17824#18520#0" />
-                    <element signature="e#18527#19924#0" />
-                    <element signature="method#toTypeDataPlusMinus#0;class#Diagram#0" />
-                    <element signature="e#20368#21068#0" />
-                    <element signature="method#toTypeDataSlashStar#0;class#Diagram#0" />
-                    <element signature="method#toTypeDataPercent#0;class#Diagram#0" />
-                    <element signature="method#isNumber#0;class#Diagram#0" />
-                    <element signature="e#22421#22987#0" />
-                    <element signature="e#22994#25078#0" />
-                    <element signature="e#25084#25168#0" />
+                    <element signature="e#269#551#0" />
+                    <element signature="e#1195#1285#0" />
+                    <element signature="e#1290#1481#0" />
+                    <element signature="e#1488#1637#0" />
+                    <element signature="e#2485#2976#0" />
+                    <element signature="e#3616#3804#0" />
+                    <element signature="e#3809#4085#0" />
+                    <element signature="e#4093#4238#0" />
+                    <element signature="e#6881#7083#0" />
+                    <element signature="e#6979#7108#0" />
+                    <element signature="e#7113#7432#0" />
+                    <element signature="e#7437#7574#0" />
+                    <element signature="e#7579#7741#0" />
+                    <element signature="e#7746#7891#0" />
+                    <element signature="e#7896#8220#0" />
+                    <element signature="e#8225#8361#0" />
+                    <element signature="e#8366#8668#0" />
+                    <element signature="e#8673#8836#0" />
+                    <element signature="e#8841#9008#0" />
+                    <element signature="e#9016#9239#0" />
+                    <element signature="e#13173#13398#0" />
+                    <element signature="e#13403#13611#0" />
+                    <element signature="e#13616#14708#0" />
+                    <element signature="e#14713#15817#0" />
+                    <element signature="e#15924#16670#0" />
+                    <element signature="e#18423#18948#0" />
+                    <element signature="e#21671#22103#0" />
+                    <element signature="e#22815#23720#0" />
+                    <element signature="e#23725#23963#0" />
+                    <element signature="e#23968#24156#0" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/objects/ProgramTree.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-187">
+                  <caret line="39" column="29" lean-forward="true" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+                  <folding>
+                    <element signature="method#findUpFunction#0;class#ProgramTree#0" />
+                    <element signature="method#print#0;class#ProgramTree#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/objects/Node.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="316">
+                  <caret line="31" column="102" selection-start-line="31" selection-start-column="102" selection-end-line="31" selection-end-column="102" />
                 </state>
               </provider>
             </entry>
@@ -95,8 +97,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/diagram/ClassicDiagram.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="115">
-                  <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="17" selection-end-column="20" />
+                <state relative-caret-position="491">
+                  <caret line="55" column="25" lean-forward="true" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#532#533#0" expanded="true" />
@@ -106,40 +108,15 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/objects/Node.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-                  <folding>
-                    <element signature="e#333#334#0" expanded="true" />
-                    <element signature="e#377#378#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
         </leaf>
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Main.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="442">
-                  <caret line="26" column="45" lean-forward="true" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Test.jaton">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
-                  <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+                <state relative-caret-position="255">
+                  <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
                 </state>
               </provider>
             </entry>
@@ -176,6 +153,14 @@
       <find>Ожидалось выражение</find>
       <find>semFindFunction</find>
       <find>Функция</find>
+      <find>AddAr</find>
+      <find>System.out</find>
+      <find>System.out.</find>
+      <find>n</find>
+      <find>Ожидалось целое</find>
+      <find>Выход за границу массива</find>
+      <find>границу массива</find>
+      <find>while</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -184,14 +169,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/objects/ProgramTree.java" />
         <option value="$PROJECT_DIR$/src/MainTree.java" />
         <option value="$PROJECT_DIR$/src/parser/Scanner.java" />
-        <option value="$PROJECT_DIR$/src/objects/Node.java" />
-        <option value="$PROJECT_DIR$/src/diagram/ClassicDiagram.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/diagram/Diagram.java" />
+        <option value="$PROJECT_DIR$/src/objects/ProgramTree.java" />
+        <option value="$PROJECT_DIR$/src/diagram/ClassicDiagram.java" />
         <option value="$PROJECT_DIR$/Test.jaton" />
+        <option value="$PROJECT_DIR$/src/objects/Node.java" />
+        <option value="$PROJECT_DIR$/src/diagram/Diagram.java" />
       </list>
     </option>
   </component>
@@ -244,7 +229,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549912070002" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549979295824" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -346,7 +331,7 @@
       <workItem from="1549783142917" duration="283000" />
       <workItem from="1549873583835" duration="595000" />
       <workItem from="1549876403114" duration="311000" />
-      <workItem from="1549879319896" duration="15612000" />
+      <workItem from="1549879319896" duration="32171000" />
     </task>
     <task id="LOCAL-00001" summary="fix sem functions">
       <created>1549616105834</created>
@@ -390,11 +375,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549909162472</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Функции">
+      <created>1549912098406</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1549912098406</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59405000" />
+    <option name="totallyTimeSpent" value="75964000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -407,7 +399,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14010416" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -418,8 +409,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32994923" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49921876" visible="true" weight="0.29137057" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39695433" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49921876" weight="0.25989848" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39695433" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3218274" />
@@ -483,22 +474,17 @@
     <MESSAGE value="Двупроходная схема" />
     <MESSAGE value="Циклы" />
     <MESSAGE value="Циклы исправление ошибок" />
-    <option name="LAST_COMMIT_MESSAGE" value="Циклы исправление ошибок" />
+    <MESSAGE value="Функции" />
+    <option name="LAST_COMMIT_MESSAGE" value="Функции" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/diagram/Diagram.java</url>
-          <line>498</line>
+          <line>745</line>
           <properties />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/diagram/Diagram.java</url>
-          <line>338</line>
-          <properties />
-          <option name="timeStamp" value="18" />
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -539,28 +525,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/ProgramTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="43" column="17" lean-forward="true" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
-          <folding>
-            <element signature="method#findUpFunction#0;class#ProgramTree#0" />
-            <element signature="method#print#0;class#ProgramTree#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/parser/Token.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-          <folding>
-            <element signature="e#305#306#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/parser/Scanner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="509">
@@ -578,21 +542,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/Node.java">
+    <entry file="file://$PROJECT_DIR$/src/parser/Token.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
-            <element signature="e#333#334#0" expanded="true" />
-            <element signature="e#377#378#0" expanded="true" />
+            <element signature="e#332#333#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/diagram/ClassicDiagram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="17" selection-end-column="20" />
+        <state relative-caret-position="491">
+          <caret line="55" column="25" lean-forward="true" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#532#533#0" expanded="true" />
@@ -601,81 +564,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/diagram/Diagram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="343" column="42" selection-start-line="343" selection-start-column="42" selection-end-line="343" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Diagram#0;class#Diagram#0" />
-            <element signature="e#1217#1280#0" />
-            <element signature="e#1217#1417#0" />
-            <element signature="method#isFunction#0;class#Diagram#0" />
-            <element signature="e#2301#2643#0" />
-            <element signature="e#2530#2603#1" />
-            <element signature="e#3203#3204#0" expanded="true" />
-            <element signature="e#3427#3576#0" />
-            <element signature="e#3569#3815#0" />
-            <element signature="e#3660#3874#1" />
-            <element signature="method#isDate#0;class#Diagram#0" />
-            <element signature="e#3894#4393#0" />
-            <element signature="e#4178#4237#1" />
-            <element signature="e#4947#4948#0" expanded="true" />
-            <element signature="e#4494#6418#0" />
-            <element signature="e#5770#6083#1" />
-            <element signature="method#semHasVarOrArray#0;class#Diagram#0" />
-            <element signature="e#6506#6601#0" />
-            <element signature="method#semAddVar#0;class#Diagram#0" />
-            <element signature="e#6960#7057#0" />
-            <element signature="e#7127#7289#0" />
-            <element signature="e#7381#7518#0" />
-            <element signature="e#7338#7376#1" />
-            <element signature="e#7523#7847#0" />
-            <element signature="e#7736#7832#0" />
-            <element signature="e#8043#8345#0" />
-            <element signature="method#semArrayTypes#0;class#Diagram#0" />
-            <element signature="method#semTypeNumber#0;class#Diagram#0" />
-            <element signature="method#isOperator#0;class#Diagram#0" />
-            <element signature="e#11431#11656#0" />
-            <element signature="e#11185#11385#0" />
-            <element signature="e#11234#11379#1" />
-            <element signature="e#11390#12389#0" />
-            <element signature="e#12971#14075#0" />
-            <element signature="e#12488#12551#1" />
-            <element signature="e#15646#15647#0" expanded="true" />
-            <element signature="method#assignment#0;class#Diagram#0" />
-            <element signature="e#13340#13402#1" />
-            <element signature="e#16497#16498#0" expanded="true" />
-            <element signature="e#15033#16673#0" />
-            <element signature="e#16681#17206#0" />
-            <element signature="e#17824#18520#0" />
-            <element signature="e#18527#19924#0" />
-            <element signature="method#toTypeDataPlusMinus#0;class#Diagram#0" />
-            <element signature="e#20368#21068#0" />
-            <element signature="method#toTypeDataSlashStar#0;class#Diagram#0" />
-            <element signature="method#toTypeDataPercent#0;class#Diagram#0" />
-            <element signature="method#isNumber#0;class#Diagram#0" />
-            <element signature="e#22421#22987#0" />
-            <element signature="e#22994#25078#0" />
-            <element signature="e#25084#25168#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="45" lean-forward="true" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
+        <state relative-caret-position="374">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -684,8 +586,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Test.jaton">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        <state relative-caret-position="255">
+          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="31" column="102" selection-start-line="31" selection-start-column="102" selection-end-line="31" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/ProgramTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="39" column="29" lean-forward="true" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+          <folding>
+            <element signature="method#findUpFunction#0;class#ProgramTree#0" />
+            <element signature="method#print#0;class#ProgramTree#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diagram/Diagram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="687" selection-start-line="687" selection-end-line="687" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#269#551#0" />
+            <element signature="e#1195#1285#0" />
+            <element signature="e#1290#1481#0" />
+            <element signature="e#1488#1637#0" />
+            <element signature="e#2485#2976#0" />
+            <element signature="e#3616#3804#0" />
+            <element signature="e#3809#4085#0" />
+            <element signature="e#4093#4238#0" />
+            <element signature="e#6881#7083#0" />
+            <element signature="e#6979#7108#0" />
+            <element signature="e#7113#7432#0" />
+            <element signature="e#7437#7574#0" />
+            <element signature="e#7579#7741#0" />
+            <element signature="e#7746#7891#0" />
+            <element signature="e#7896#8220#0" />
+            <element signature="e#8225#8361#0" />
+            <element signature="e#8366#8668#0" />
+            <element signature="e#8673#8836#0" />
+            <element signature="e#8841#9008#0" />
+            <element signature="e#9016#9239#0" />
+            <element signature="e#13173#13398#0" />
+            <element signature="e#13403#13611#0" />
+            <element signature="e#13616#14708#0" />
+            <element signature="e#14713#15817#0" />
+            <element signature="e#15924#16670#0" />
+            <element signature="e#18423#18948#0" />
+            <element signature="e#21671#22103#0" />
+            <element signature="e#22815#23720#0" />
+            <element signature="e#23725#23963#0" />
+            <element signature="e#23968#24156#0" />
+          </folding>
         </state>
       </provider>
     </entry>

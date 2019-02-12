@@ -1,5 +1,7 @@
 package objects;
 
+import org.omg.CORBA.UNKNOWN;
+
 public class Node {
     String name;
     TypeObject typeObject;
@@ -13,16 +15,12 @@ public class Node {
         this.ptr = ptr;
     }
 
-    public int getPtr() {
-        return ptr;
-    }
-
     public String getString() {
         return String.valueOf(value);
     }
 
     public double getDouble() {
-        if (typeData == TypeData.DOUBLE)
+        if (typeData == TypeData.DOUBLE || typeData == TypeData.UNKNOW)
             return Double.parseDouble(String.valueOf(value));
         else if (typeData == TypeData.INTEGER)
             return Integer.parseInt(String.valueOf(value));
@@ -31,7 +29,7 @@ public class Node {
     }
 
     public int getInteger() {
-        if (typeData == TypeData.INTEGER || typeData == TypeData.DOUBLE)
+        if (typeData == TypeData.INTEGER || typeData == TypeData.DOUBLE || typeData == TypeData.UNKNOW)
             return (int) Double.parseDouble(String.valueOf(value));
         else
             return (int) String.valueOf(value).charAt(0);
