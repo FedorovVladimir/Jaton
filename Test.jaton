@@ -1,6 +1,6 @@
 class Main {
 
-    double n = 1;
+    double n = 5;
     double numbers[] = new double[1000];
 
     void input() {
@@ -10,14 +10,13 @@ class Main {
 
     public static void main() {
         while (n) {
-           input();
-           while (n > 0) {
-            println("while");
+            input();
+            while (n > 0) {
                 findNumbers();
                 display();
                 displayResult();
-               input();
-           }
+                input();
+            }
         }
     }
 
@@ -25,8 +24,12 @@ class Main {
         double i = 2;
         double k = n;
         numbers[0] = 1;
-        numbers[1] = 1;
-        while (k - 2) {
+        double f = n;
+        while(f > 1) {
+            numbers[1] = 1;
+            f = 0;
+        }
+        while (k > 2) {
             numbers[i] = numbers[i - 1] + numbers[i - 2];
             k = k - 1;
             i = i + 1;
@@ -36,9 +39,7 @@ class Main {
     void display() {
         double k = n;
         double i = 0;
-        numbers[0] = 1;
-        numbers[1] = 1;
-        while (k) {
+        while (k > 0) {
             print(numbers[i] + " | ");
             k = k - 1;
             i = i + 1;

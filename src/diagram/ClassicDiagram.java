@@ -53,8 +53,6 @@ public class ClassicDiagram {
     }
 
     void semPrintError(String text) {
-        if (fInits.peek()) {
-            System.out.println(text + " строка " + scanner.getNumberRow() + ", столбец " + scanner.getNumberCol());
-        }
+        System.out.println(text + " строка " + scanner.getNumberRow() + ", столбец " + scanner.getNumberCol());
     }
 }

@@ -191,10 +191,9 @@ public class Diagram extends ClassicDiagram {
                 next(TokenType.OPEN_SQUARE, "Ожидался символ [");
 
                 Node node = expression1();
-                //next(TokenType.TYPE_INT, "Ожидалось целое");
 
                 int i = node.getInteger();
-                //semTypeNumber(node.typeData);
+                semTypeNumber(node.typeData);
 
                 next(TokenType.CLOSE_SQUARE, "Ожидался символ ]");
                 if (typeData == typeDataMass) {
@@ -354,8 +353,7 @@ public class Diagram extends ClassicDiagram {
                     Node mass = tree.findUpArray(id.getText()).node;
                     int i = node.getInteger();
                     if (mass.n <= i || i < 0) {
-                        semPrintError("Выход за границу массива");
-                        printError("Выход за границу массива");
+                        semPrintError("Выход за границу массива (2)");
                     }
                 }
                 next(TokenType.CLOSE_SQUARE, "Ожидался символ ]");
@@ -543,7 +541,7 @@ public class Diagram extends ClassicDiagram {
                 node.typeData = TypeData.CHAR;
             } else {
                 node.typeData = TypeData.UNKNOW;
-                semPrintError("Неопределенный тип");
+                semPrintErrorType("expression1");
             }
         }
         return node;
@@ -564,7 +562,7 @@ public class Diagram extends ClassicDiagram {
                 node.typeData = TypeData.INTEGER;
             } else {
                 node.typeData = TypeData.UNKNOW;
-                semPrintError("Неопределенный тип");
+                semPrintErrorType("expression2");
             }
             if (znak.getType() == TokenType.GREAT) {
                 node.value = (node.getDouble() > node2.getDouble())?1:0;
@@ -587,7 +585,7 @@ public class Diagram extends ClassicDiagram {
 
             TypeData typeData = toTypeDataPlusMinus(res.typeData, node2.typeData);
             if (typeData == TypeData.UNKNOW)
-                semPrintError("Неопределенный тип");
+                semPrintErrorType("expression3");
             if (znak.getType() == TokenType.PLUS) {
                 if (typeData == TypeData.STRING) {
                     res.value = res.getString() + node2.getString();
@@ -609,6 +607,13 @@ public class Diagram extends ClassicDiagram {
         }
         return res;
     }
+
+    private void semPrintErrorType(String expression) {
+        if (fInits.peek()) {
+            System.out.println("Неопределенный тип " + expression);
+        }
+    }
+
     private TypeData toTypeDataPlusMinus(TypeData typeData1, TypeData typeData2) {
         if (typeData1 == TypeData.STRING || typeData2 == TypeData.STRING) {
             if (typeData1 != TypeData.UNKNOW && typeData2 != TypeData.UNKNOW) {
@@ -635,7 +640,7 @@ public class Diagram extends ClassicDiagram {
                 node.typeData = toTypeDataSlashStar(node.typeData, typeData2);
 
             if (node.typeData == TypeData.UNKNOW) {
-                semPrintError("Неопределенный тип");
+                semPrintErrorType("expression4");
             }
         }
         return node;
@@ -685,7 +690,7 @@ public class Diagram extends ClassicDiagram {
         Node node = expression6();
         if (isZnak) {
             if (node.typeData != TypeData.DOUBLE && node.typeData != TypeData.INTEGER) {
-                semPrintError("Неопределенный тип");
+                semPrintErrorType("expression5");
                 return Node.createUnknown();
             } else
                 return node;
@@ -706,20 +711,21 @@ public class Diagram extends ClassicDiagram {
 
                 Node index = expression1();
 
-                //next(TokenType.TYPE_INT, "Ожидалось целое");
-
                 int i = index.getInteger();
                 next(TokenType.CLOSE_SQUARE, "Ожидался символ ]");
                 if (tree.findUpVarOrArray(tokenName.getText()) != null) {
                     if (tree.findUpVarOrArray(tokenName.getText()).node.typeData == TypeData.DOUBLE) {
                         String name = tokenName.getText();
                         if (tree.findUpVarOrArray(name).node.n <= i || i < 0) {
-                            semPrintError("Выход за границу массива");
-                            System.exit(1);
+                            semPrintErrorMass("(1) " + i);
                         }
 
                         Node mass = tree.findUpVarOrArray(name).node;
-                        double a = ((double[]) mass.value)[i];
+
+                        double a = 0;
+                        if (fInits.peek()) {
+                             a = ((double[]) mass.value)[i];
+                        }
                         Node node;
                         if (mass.typeData == TypeData.DOUBLE) {
                             node = Node.createVar("elmass", TypeData.DOUBLE);
@@ -733,9 +739,8 @@ public class Diagram extends ClassicDiagram {
 
                     }
                     return tree.findUpVarOrArray(tokenName.getText()).node;
-                }
-                else {
-                    semPrintError("Неизвестная переменная");
+                } else {
+                    semPrintErrorVar("(1)");
                     return Node.createUnknown();
                 }
             }
@@ -745,7 +750,7 @@ public class Diagram extends ClassicDiagram {
                 }
                 else {
                     if (fInits.peek()) {
-                        semPrintError("Неизвестная переменная");
+                        semPrintErrorVar("(2)");
                     }
                     return Node.createUnknown();
                 }
@@ -766,6 +771,18 @@ public class Diagram extends ClassicDiagram {
             return Node.createConst(TypeData.CHAR, token.getText());
         } else {
             return Node.createConst(TypeData.STRING, token.getText());
+        }
+    }
+
+    private void semPrintErrorMass(String s) {
+        if (fInits.peek()) {
+            System.out.println("Выход за границу массива " + s);
+        }
+    }
+
+    private void semPrintErrorVar(String s) {
+        if (fInits.peek()) {
+            System.out.println("Неизвестная переменная " + s);
         }
     }
 
