@@ -240,3 +240,133 @@ class Main {
 Какое число фибоначи найти? Введите номер (для окончания введите 0): -122
 Какое число фибоначи найти? Введите номер (для окончания введите 0): 0
 ```
+7. Решение квадратного уравнения на Jaton
+#### Код:
+```
+class Main {
+    double a = 1;
+    double b;
+    double c;
+    double D;
+    double sqrt;
+
+    void input() {
+        print("Введите коэфициент a: ");
+        scan(a);
+        print("Введите коэфициент b: ");
+        scan(b);
+        print("Введите коэфициент c: ");
+        scan(c);
+    }
+
+    void display1() {
+        print("Ищем " + a + "*x^2");
+        double pb = b;
+        while (pb >= 0) {
+            print("+");
+            pb = -1;
+        }
+        print(b + "*x");
+
+        double pc = c;
+        while (pc >= 0) {
+            print("+");
+            pc = -1;
+        }
+        println(c + " = 0");
+    }
+
+    void calcDiscriminant() {
+        D = b*b - 4*a*c;
+    }
+
+    void display2() {
+        println("D = " + D);
+    }
+
+    void root1() {
+        double d = D;
+        while (d == 0) {
+            println("Один корень");
+            println("x=" + -b/2/a);
+            d = 1;
+        }
+    }
+
+    void root2() {
+        double d = D;
+        while (d > 0) {
+            println("Два корня");
+            sqrt();
+            println("x1=" + (-b+sqrt) / (2*a));
+            println("x2=" + (-b-sqrt) / (2*a));
+            d = 0;
+        }
+    }
+
+    void root0() {
+        double d = D;
+        while (d < 0) {
+            print("Нет корней");
+            d = 0;
+        }
+    }
+
+    public static void main () {
+        while(a) {
+            input();
+            while(a) {
+                display1();
+                calcDiscriminant();
+                display2();
+                root1();
+                root2();
+                root0();
+                input();
+            }
+        }
+    }
+
+    void sqrt() {
+        sqrt = 0;
+        while(sqrt * sqrt <= D) {
+            sqrt = sqrt + 1;
+        }
+        sqrt = sqrt - 1;
+
+        while(sqrt * sqrt <= D) {
+            sqrt = sqrt + 0.1;
+        }
+        sqrt = sqrt - 0.1;
+
+        while(sqrt * sqrt <= D) {
+            sqrt = sqrt + 0.01;
+        }
+        sqrt = sqrt - 0.01;
+
+        println("sqrt(d)≈" + sqrt);
+    }
+}
+```
+#### Вывод:
+```
+Введите коэфициент a: 1
+Введите коэфициент b: 2
+Введите коэфициент c: 1
+Ищем 1*x^2+2*x+1 = 0
+D = 0.0
+Один корень
+x=-1.0
+Введите коэфициент a: 1
+Введите коэфициент b: -5
+Введите коэфициент c: 6
+Ищем 1*x^2-5*x+6 = 0
+D = 1.0
+Два корня
+sqrt(d)≈1.0
+x1=3.0
+x2=2.0
+Введите коэфициент a: 0
+Введите коэфициент b: 0
+Введите коэфициент c: 0
+```
