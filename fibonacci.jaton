@@ -1,0 +1,53 @@
+class Main {
+
+    double n = 5;
+    double numbers[] = new double[1000];
+
+    void input() {
+        print("Какое число фибоначи найти? Введите номер (для окончания введите 0): ");
+        scan(n);
+    }
+
+    public static void main() {
+        while (n) {
+            input();
+            while (n > 0) {
+                findNumbers();
+                display();
+                displayResult();
+                input();
+            }
+        }
+    }
+
+    void findNumbers() {
+        double i = 2;
+        double k = n;
+        numbers[0] = 1;
+        double f = n;
+        while(f > 1) {
+            numbers[1] = 1;
+            f = 0;
+        }
+        while (k > 2) {
+            numbers[i] = numbers[i - 1] + numbers[i - 2];
+            k = k - 1;
+            i = i + 1;
+        }
+    }
+
+    void display() {
+        double k = n;
+        double i = 0;
+        while (k > 0) {
+            print(numbers[i] + " | ");
+            k = k - 1;
+            i = i + 1;
+        }
+        println("");
+    }
+
+    void displayResult() {
+        println("Число Фибоначи №" + n + " = " + numbers[n - 1]);
+    }
+}

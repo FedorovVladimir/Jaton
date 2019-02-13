@@ -333,7 +333,7 @@ public class Diagram extends ClassicDiagram {
                     Token token1 = token;
                     Token nextToken1 = nextToken;
 
-                    int symbolFunction = tree.findUpFunction(id.getText()).node.ptr; // TODO: 12.02.2019
+                    int symbolFunction = tree.findUpFunction(id.getText()).node.ptr;
                     scanner.setNumberSymbol(symbolFunction);
                     operatorsAndDate();
 
@@ -530,19 +530,13 @@ public class Diagram extends ClassicDiagram {
     }
     private Node expression1() {
         Node node = expression2();
-        TypeData typeData = node.typeData;
 
         while (nextToken.getType() == TokenType.EQUALLY || nextToken.getType() == TokenType.NOT_EQUALLY) {
             next();
 
             Node node2 = expression2();
-            TypeData typeData2 = node2.typeData;
-            if (isNumber(typeData) && isNumber(typeData2)) {
-                node.typeData = TypeData.CHAR;
-            } else {
-                node.typeData = TypeData.UNKNOW;
-                semPrintErrorType("expression1");
-            }
+            node.value = (node.getDouble() == node2.getDouble())?1:0;
+            node.typeData = TypeData.DOUBLE;
         }
         return node;
     }
@@ -566,6 +560,12 @@ public class Diagram extends ClassicDiagram {
             }
             if (znak.getType() == TokenType.GREAT) {
                 node.value = (node.getDouble() > node2.getDouble())?1:0;
+            } else if (znak.getType() == TokenType.GREAT_EQUALLY) {
+                node.value = (node.getDouble() >= node2.getDouble())?1:0;
+            } else if (znak.getType() == TokenType.LESS) {
+                node.value = (node.getDouble() < node2.getDouble())?1:0;
+            } else if (znak.getType() == TokenType.LESS_EQUALLY) {
+                node.value = (node.getDouble() <= node2.getDouble())?1:0;
             }
         }
         return node;
@@ -607,13 +607,11 @@ public class Diagram extends ClassicDiagram {
         }
         return res;
     }
-
     private void semPrintErrorType(String expression) {
         if (fInits.peek()) {
             System.out.println("Неопределенный тип " + expression);
         }
     }
-
     private TypeData toTypeDataPlusMinus(TypeData typeData1, TypeData typeData2) {
         if (typeData1 == TypeData.STRING || typeData2 == TypeData.STRING) {
             if (typeData1 != TypeData.UNKNOW && typeData2 != TypeData.UNKNOW) {
@@ -628,22 +626,48 @@ public class Diagram extends ClassicDiagram {
 
     private Node expression4() {
         Node node = expression5();
+        Node res = Node.createVar("sum", node.typeData);
+        res.value = node.value;
+        res.typeData = node.typeData;
 
+        Token znak = nextToken;
         while (nextToken.getType() == TokenType.STAR || nextToken.getType() == TokenType.SLASH || nextToken.getType() == TokenType.PERCENT) {
             next();
             Node node2 = expression5();
             TypeData typeData2 = node2.typeData;
 
             if (token.getType() == TokenType.PERCENT)
-                node.typeData = toTypeDataPercent(node.typeData, typeData2);
+                res.typeData = toTypeDataPercent(res.typeData, typeData2);
             else
-                node.typeData = toTypeDataSlashStar(node.typeData, typeData2);
+                res.typeData = toTypeDataSlashStar(res.typeData, typeData2);
 
-            if (node.typeData == TypeData.UNKNOW) {
+            if (res.typeData == TypeData.UNKNOW) {
                 semPrintErrorType("expression4");
             }
+
+            if (fInits.peek()) {
+                if (znak.getType() == TokenType.STAR) {
+                    if (res.typeData == TypeData.STRING || res.typeData == TypeData.CHAR) {
+                        printError("Нельзя умножать строки");
+                    } else {
+                        res.value = res.getDouble() * node2.getDouble();
+                    }
+                } else if (znak.getType() == TokenType.SLASH) {
+                    if (res.typeData == TypeData.STRING || res.typeData == TypeData.CHAR) {
+                        printError("Не возможно делить строку");
+                    } else {
+                        res.value = res.getDouble() / node2.getDouble();
+                    }
+                } else {
+                    if (res.typeData == TypeData.STRING || res.typeData == TypeData.CHAR) {
+                        printError("Не возможно делить строку");
+                    } else {
+                        res.value = res.getInteger() % node2.getInteger();
+                    }
+                }
+            }
         }
-        return node;
+        return res;
     }
     private TypeData toTypeDataSlashStar(TypeData typeData1, TypeData typeData2) {
         if (typeData1 == TypeData.DOUBLE || typeData2 == TypeData.DOUBLE) {
@@ -682,20 +706,33 @@ public class Diagram extends ClassicDiagram {
 
     private Node expression5() {
         boolean isZnak = false;
+        boolean k = false;
         while (nextToken.getType() == TokenType.PLUS || nextToken.getType() == TokenType.MINUS) {
+            if (nextToken.getType() == TokenType.MINUS) {
+                k = !k;
+            }
             next();
             isZnak = true;
         }
 
         Node node = expression6();
+        Node ret = Node.createEmptyNode();
+        ret.typeData = node.typeData;
+        ret.value = node.value;
         if (isZnak) {
             if (node.typeData != TypeData.DOUBLE && node.typeData != TypeData.INTEGER) {
                 semPrintErrorType("expression5");
                 return Node.createUnknown();
-            } else
-                return node;
+            } else {
+                if (k) {
+                    ret.value = -(node.getDouble());
+                } else {
+                    ret.value = node.getDouble();
+                }
+                return ret;
+            }
         } else {
-            return node;
+            return ret;
         }
     }
 

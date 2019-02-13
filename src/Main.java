@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         String text;
         try {
-            text = Reader.getDate("Test.jaton");
+            text = Reader.getDate("discriminant.jaton");
         } catch (Exception e) {
             System.out.println("Неверны тип файла");
             return;

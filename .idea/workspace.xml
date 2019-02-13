@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1f74589-f0d3-4c56-8a3b-d71c74a39c66" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/discriminant.jaton" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fibonacci.jaton" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test.jaton" beforeDir="false" afterPath="$PROJECT_DIR$/Test.jaton" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/diagram/ClassicDiagram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/diagram/ClassicDiagram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/diagram/Diagram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/diagram/Diagram.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/objects/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/Node.java" afterDir="false" />
     </list>
@@ -16,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.65717745">
+    <splitter split-orientation="horizontal" split-proportion="0.65303737">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -34,11 +35,11 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/diagram/Diagram.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="161">
-                  <caret line="724" column="36" selection-start-line="724" selection-start-column="36" selection-end-line="724" selection-end-column="36" />
+                <state relative-caret-position="511">
+                  <caret line="734" column="22" selection-start-line="734" selection-start-column="22" selection-end-line="734" selection-end-column="22" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#269#551#0" />
+                    <element signature="e#557#1190#0" />
                     <element signature="e#1195#1285#0" />
                     <element signature="e#1290#1481#0" />
                     <element signature="e#1488#1637#0" />
@@ -46,21 +47,53 @@
                     <element signature="e#3616#3804#0" />
                     <element signature="e#3809#4085#0" />
                     <element signature="e#4093#4238#0" />
-                    <element signature="e#6979#7108#0" />
-                    <element signature="e#7113#7432#0" />
-                    <element signature="e#7579#7741#0" />
-                    <element signature="e#7746#7891#0" />
-                    <element signature="e#7896#8220#0" />
-                    <element signature="e#8225#8361#0" />
-                    <element signature="e#8366#8668#0" />
-                    <element signature="e#8673#8836#0" />
-                    <element signature="e#9016#9239#0" />
-                    <element signature="e#13173#13398#0" />
-                    <element signature="e#13403#13611#0" />
-                    <element signature="e#13616#14708#0" />
-                    <element signature="e#14713#15817#0" />
-                    <element signature="e#18423#18948#0" />
-                    <element signature="e#23725#23963#0" />
+                    <element signature="e#4243#4742#0" />
+                    <element signature="e#4843#6811#0" />
+                    <element signature="e#6816#7015#0" />
+                    <element signature="e#7020#7149#0" />
+                    <element signature="e#7154#7473#0" />
+                    <element signature="e#7478#7615#0" />
+                    <element signature="e#7620#7782#0" />
+                    <element signature="e#7787#7932#0" />
+                    <element signature="e#7874#7926#1" />
+                    <element signature="e#7937#8261#0" />
+                    <element signature="e#8266#8402#0" />
+                    <element signature="e#8407#8709#0" />
+                    <element signature="e#8714#8877#0" />
+                    <element signature="e#8882#9049#0" />
+                    <element signature="e#9057#9280#0" />
+                    <element signature="e#9285#13279#0" />
+                    <element signature="e#13284#13509#0" />
+                    <element signature="e#13352#13503#1" />
+                    <element signature="e#13514#13722#0" />
+                    <element signature="e#13727#14819#0" />
+                    <element signature="e#14824#15928#0" />
+                    <element signature="e#16035#16781#0" />
+                    <element signature="e#16886#18527#0" />
+                    <element signature="e#18535#19060#0" />
+                    <element signature="e#19065#19668#0" />
+                    <element signature="e#20554#21986#0" />
+                    <element signature="e#21992#22156#0" />
+                    <element signature="e#22162#22594#0" />
+                    <element signature="e#23303#24208#0" />
+                    <element signature="e#24213#24451#0" />
+                    <element signature="e#24456#24644#0" />
+                    <element signature="e#26509#29555#0" />
+                    <element signature="e#29561#29713#0" />
+                    <element signature="e#29719#29868#0" />
+                    <element signature="e#29874#29958#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/objects/Node.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="181">
+                  <caret line="22" selection-start-line="22" selection-end-line="22" />
+                  <folding>
+                    <element signature="e#452#453#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -69,7 +102,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/objects/ProgramTree.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="264">
+                <state relative-caret-position="561">
                   <caret line="43" selection-start-line="43" selection-end-line="43" />
                   <folding>
                     <element signature="method#findUpFunction#0;class#ProgramTree#0" />
@@ -82,7 +115,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/parser/Token.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
+                <state relative-caret-position="289">
                   <caret line="17" selection-start-line="17" selection-end-line="17" />
                   <folding>
                     <element signature="e#332#333#0" expanded="true" />
@@ -94,8 +127,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/diagram/ClassicDiagram.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="491">
-                  <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+                <state relative-caret-position="714">
+                  <caret line="53" selection-start-line="53" selection-end-line="53" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#532#533#0" expanded="true" />
@@ -109,11 +142,20 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Test.jaton">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="544">
-                  <caret line="32" column="15" selection-end-line="53" />
+                <state relative-caret-position="204">
+                  <caret line="12" column="17" selection-end-line="53" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/discriminant.jaton">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="510">
+                  <caret line="30" column="18" selection-end-line="110" />
                 </state>
               </provider>
             </entry>
@@ -131,11 +173,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>semAddClass</find>
-      <find>semAddVar</find>
-      <find>semInitVar</find>
-      <find>semInitArray</find>
-      <find>Массив</find>
       <find>semAddArray</find>
       <find>interAddArray</find>
       <find>assignment</find>
@@ -158,9 +195,14 @@
       <find>границу массива</find>
       <find>PLU</find>
       <find>Неопреде</find>
-      <find>#</find>
       <find>Выход за границу массива</find>
       <find>Неиз</find>
+      <find>#</find>
+      <find>print</find>
+      <find>print(</find>
+      <find>(1)</find>
+      <find>root1</find>
+      <find>0</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -171,12 +213,14 @@
       <list>
         <option value="$PROJECT_DIR$/src/MainTree.java" />
         <option value="$PROJECT_DIR$/src/parser/Scanner.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/objects/ProgramTree.java" />
-        <option value="$PROJECT_DIR$/src/objects/Node.java" />
         <option value="$PROJECT_DIR$/src/diagram/ClassicDiagram.java" />
-        <option value="$PROJECT_DIR$/src/diagram/Diagram.java" />
         <option value="$PROJECT_DIR$/Test.jaton" />
+        <option value="$PROJECT_DIR$/fibonacci.jaton" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/objects/Node.java" />
+        <option value="$PROJECT_DIR$/src/diagram/Diagram.java" />
+        <option value="$PROJECT_DIR$/discriminant.jaton" />
       </list>
     </option>
   </component>
@@ -229,7 +273,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549991789715" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550085869570" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -331,7 +375,9 @@
       <workItem from="1549783142917" duration="283000" />
       <workItem from="1549873583835" duration="595000" />
       <workItem from="1549876403114" duration="311000" />
-      <workItem from="1549879319896" duration="38167000" />
+      <workItem from="1549879319896" duration="38685000" />
+      <workItem from="1550070167482" duration="333000" />
+      <workItem from="1550074122455" duration="11685000" />
     </task>
     <task id="LOCAL-00001" summary="fix sem functions">
       <created>1549616105834</created>
@@ -389,11 +435,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549979363710</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="&gt; и массивы fix">
+      <created>1549991864062</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1549991864062</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81960000" />
+    <option name="totallyTimeSpent" value="94496000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -408,7 +461,7 @@
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14010416" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.108333334" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -484,7 +537,8 @@
     <MESSAGE value="Циклы исправление ошибок" />
     <MESSAGE value="Функции" />
     <MESSAGE value="&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&gt;" />
+    <MESSAGE value="&gt; и массивы fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="&gt; и массивы fix" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -541,17 +595,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/Node.java">
+    <entry file="file://$PROJECT_DIR$/src/MainTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="22" column="103" selection-start-line="22" selection-start-column="103" selection-end-line="22" selection-end-column="103" />
+        <state relative-caret-position="153">
+          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/ProgramTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="method#findUpFunction#0;class#ProgramTree#0" />
+            <element signature="method#print#0;class#ProgramTree#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/diagram/ClassicDiagram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="714">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#532#533#0" expanded="true" />
@@ -560,12 +628,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainTree.java">
+    <entry file="file://$PROJECT_DIR$/Test.jaton">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="204">
+          <caret line="12" column="17" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fibonacci.jaton">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parser/Token.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#332#333#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#452#453#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -580,34 +672,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/parser/Token.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/StrictMath.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#332#333#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="29">
+          <caret line="269" column="38" selection-start-line="269" selection-start-column="38" selection-end-line="269" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/ProgramTree.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/Math.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        <state relative-caret-position="153">
+          <caret line="338" column="28" selection-start-line="338" selection-start-column="28" selection-end-line="338" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/com/sun/org/apache/xalan/internal/lib/ExsltMath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="326" column="24" selection-start-line="326" selection-start-column="24" selection-end-line="326" selection-end-column="24" />
           <folding>
-            <element signature="method#findUpFunction#0;class#ProgramTree#0" />
-            <element signature="method#print#0;class#ProgramTree#0" />
+            <element signature="e#10076#10077#0" expanded="true" />
+            <element signature="e#10109#10110#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/diagram/Diagram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="724" column="36" selection-start-line="724" selection-start-column="36" selection-end-line="724" selection-end-column="36" />
+        <state relative-caret-position="511">
+          <caret line="734" column="22" selection-start-line="734" selection-start-column="22" selection-end-line="734" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#269#551#0" />
+            <element signature="e#557#1190#0" />
             <element signature="e#1195#1285#0" />
             <element signature="e#1290#1481#0" />
             <element signature="e#1488#1637#0" />
@@ -615,29 +711,49 @@
             <element signature="e#3616#3804#0" />
             <element signature="e#3809#4085#0" />
             <element signature="e#4093#4238#0" />
-            <element signature="e#6979#7108#0" />
-            <element signature="e#7113#7432#0" />
-            <element signature="e#7579#7741#0" />
-            <element signature="e#7746#7891#0" />
-            <element signature="e#7896#8220#0" />
-            <element signature="e#8225#8361#0" />
-            <element signature="e#8366#8668#0" />
-            <element signature="e#8673#8836#0" />
-            <element signature="e#9016#9239#0" />
-            <element signature="e#13173#13398#0" />
-            <element signature="e#13403#13611#0" />
-            <element signature="e#13616#14708#0" />
-            <element signature="e#14713#15817#0" />
-            <element signature="e#18423#18948#0" />
-            <element signature="e#23725#23963#0" />
+            <element signature="e#4243#4742#0" />
+            <element signature="e#4843#6811#0" />
+            <element signature="e#6816#7015#0" />
+            <element signature="e#7020#7149#0" />
+            <element signature="e#7154#7473#0" />
+            <element signature="e#7478#7615#0" />
+            <element signature="e#7620#7782#0" />
+            <element signature="e#7787#7932#0" />
+            <element signature="e#7874#7926#1" />
+            <element signature="e#7937#8261#0" />
+            <element signature="e#8266#8402#0" />
+            <element signature="e#8407#8709#0" />
+            <element signature="e#8714#8877#0" />
+            <element signature="e#8882#9049#0" />
+            <element signature="e#9057#9280#0" />
+            <element signature="e#9285#13279#0" />
+            <element signature="e#13284#13509#0" />
+            <element signature="e#13352#13503#1" />
+            <element signature="e#13514#13722#0" />
+            <element signature="e#13727#14819#0" />
+            <element signature="e#14824#15928#0" />
+            <element signature="e#16035#16781#0" />
+            <element signature="e#16886#18527#0" />
+            <element signature="e#18535#19060#0" />
+            <element signature="e#19065#19668#0" />
+            <element signature="e#20554#21986#0" />
+            <element signature="e#21992#22156#0" />
+            <element signature="e#22162#22594#0" />
+            <element signature="e#23303#24208#0" />
+            <element signature="e#24213#24451#0" />
+            <element signature="e#24456#24644#0" />
+            <element signature="e#26509#29555#0" />
+            <element signature="e#29561#29713#0" />
+            <element signature="e#29719#29868#0" />
+            <element signature="e#29874#29958#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test.jaton">
+    <entry file="file://$PROJECT_DIR$/discriminant.jaton">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="15" selection-end-line="53" />
+        <state relative-caret-position="510">
+          <caret line="30" column="18" selection-end-line="110" />
         </state>
       </provider>
     </entry>

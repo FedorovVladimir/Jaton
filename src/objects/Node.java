@@ -20,10 +20,7 @@ public class Node {
     }
 
     public double getDouble() {
-        if (typeData == TypeData.DOUBLE || typeData == TypeData.UNKNOW || typeData == TypeData.INTEGER)
-            return Double.parseDouble(String.valueOf(value));
-        else
-            return (int) String.valueOf(value).charAt(0);
+        return Double.parseDouble(String.valueOf(value));
     }
 
     public int getInteger() {
