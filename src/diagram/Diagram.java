@@ -408,7 +408,7 @@ public class Diagram extends ClassicDiagram {
                 } else if (typeData == TypeData.STRING) {
                     System.out.print(value);
                 } else {
-                    System.out.println((char) (Math.round(Double.valueOf(String.valueOf(value)))));
+                    System.out.print((char) (Math.round(Double.valueOf(String.valueOf(value)))));
                 }
             }
         }
@@ -431,6 +431,8 @@ public class Diagram extends ClassicDiagram {
             } else if (typeObject == TypeObject.VAR) {
                 if (typeData == TypeData.DOUBLE) {
                     System.out.println(Double.parseDouble(String.valueOf(value)));
+                } else if (typeData == TypeData.INTEGER) {
+                    System.out.println(Integer.parseInt(String.valueOf(value)));
                 } else if (typeData == TypeData.STRING) {
                     System.out.println(value);
                 } else {

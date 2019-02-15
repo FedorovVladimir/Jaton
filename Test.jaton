@@ -1,7 +1,6 @@
 class Main {
 	public static void main() {
 		char a[] = new char[6];
-		print('f');
 		a[0] = 'H';
 		a[1] = 'e';
 		a[2] = 'l';
