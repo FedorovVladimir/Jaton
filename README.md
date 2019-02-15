@@ -15,9 +15,9 @@ class Main {
 ```
 class Main {
     public static void main() {
-        print("Hello, world!");
-        print('a');
-        print(10);
+        println("Hello, world!");
+        println('a');
+        println(10);
         print(3.1415);
     }
 }
