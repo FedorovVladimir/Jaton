@@ -20,7 +20,10 @@ public class Node {
     }
 
     public double getDouble() {
-        return Double.parseDouble(String.valueOf(value));
+        if (typeData == TypeData.CHAR)
+            return (double)(String.valueOf(value).charAt(0));
+        else
+            return Double.parseDouble(String.valueOf(value));
     }
 
     public int getInteger() {
@@ -28,12 +31,6 @@ public class Node {
             return (int) Double.parseDouble(String.valueOf(value));
         else
             return (int) String.valueOf(value).charAt(0);
-    }
-
-    public char getChar() {
-        if (typeData == TypeData.CHAR)
-            return String.valueOf(value).charAt(0);
-        return 0;
     }
 
     private void printError(String text) {

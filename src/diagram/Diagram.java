@@ -362,9 +362,10 @@ public class Diagram extends ClassicDiagram {
                     Node ass = assignment();
                     Node mass = tree.findUpArray(id.getText()).node;
                     int n = node.getInteger();
-                    Node a = Node.createVar("newelmass", TypeData.DOUBLE);
-                    a.value = ass.value;
-                    ((double[])mass.value)[n] = a.getDouble();
+                    if (mass.typeData == TypeData.CHAR)
+                        ((char[]) mass.value)[n] = (char) Integer.parseInt(String.valueOf(ass.value));
+                    else
+                        ((double[]) mass.value)[n] = ass.getDouble();
                 } else
                     assignment();
                 next(TokenType.SEMICOLON, "Ожидался символ ;");
@@ -404,8 +405,10 @@ public class Diagram extends ClassicDiagram {
             } else if (typeObject == TypeObject.VAR) {
                 if (typeData == TypeData.DOUBLE) {
                     System.out.print(Double.parseDouble(String.valueOf(value)));
+                } else if (typeData == TypeData.STRING) {
+                    System.out.print(value);
                 } else {
-                    System.out.print(String.format("%s", value));
+                    System.out.println((char) (Math.round(Double.valueOf(String.valueOf(value)))));
                 }
             }
         }
@@ -428,8 +431,10 @@ public class Diagram extends ClassicDiagram {
             } else if (typeObject == TypeObject.VAR) {
                 if (typeData == TypeData.DOUBLE) {
                     System.out.println(Double.parseDouble(String.valueOf(value)));
+                } else if (typeData == TypeData.STRING) {
+                    System.out.println(value);
                 } else {
-                    System.out.println(String.format("%s", value));
+                    System.out.println((char) (Math.round(Double.valueOf(String.valueOf(value)))));
                 }
             }
         }
@@ -530,21 +535,32 @@ public class Diagram extends ClassicDiagram {
     }
     private Node expression1() {
         Node node = expression2();
+        Node res = Node.createVar("sum", node.typeData);
+        res.value = node.value;
+        res.typeData = node.typeData;
 
         while (nextToken.getType() == TokenType.EQUALLY || nextToken.getType() == TokenType.NOT_EQUALLY) {
+            Token znak = nextToken;
             next();
 
             Node node2 = expression2();
-            node.value = (node.getDouble() == node2.getDouble())?1:0;
-            node.typeData = TypeData.DOUBLE;
+
+            if (znak.getType() == TokenType.EQUALLY) {
+                res.value = (node.getDouble() == node2.getDouble())?1:0;
+            } else {
+                res.value = (node.getDouble() != node2.getDouble())?1:0;
+            }
         }
-        return node;
+        return res;
     }
 
 
     private Node expression2() {
         Node node = expression3();
         TypeData typeData = node.typeData;
+        Node res = Node.createVar("sum", node.typeData);
+        res.value = node.value;
+        res.typeData = node.typeData;
 
         while (nextToken.getType() == TokenType.GREAT || nextToken.getType() == TokenType.GREAT_EQUALLY || nextToken.getType() == TokenType.LESS || nextToken.getType() == TokenType.LESS_EQUALLY) {
             Token znak = nextToken;
@@ -553,22 +569,22 @@ public class Diagram extends ClassicDiagram {
             Node node2 = expression3();
             TypeData typeData2 = node2.typeData;
             if (isNumber(typeData) && isNumber(typeData2)) {
-                node.typeData = TypeData.INTEGER;
+                res.typeData = TypeData.INTEGER;
             } else {
-                node.typeData = TypeData.UNKNOW;
+                res.typeData = TypeData.UNKNOW;
                 semPrintErrorType("expression2");
             }
             if (znak.getType() == TokenType.GREAT) {
-                node.value = (node.getDouble() > node2.getDouble())?1:0;
+                res.value = (node.getDouble() > node2.getDouble())?1:0;
             } else if (znak.getType() == TokenType.GREAT_EQUALLY) {
-                node.value = (node.getDouble() >= node2.getDouble())?1:0;
+                res.value = (node.getDouble() >= node2.getDouble())?1:0;
             } else if (znak.getType() == TokenType.LESS) {
-                node.value = (node.getDouble() < node2.getDouble())?1:0;
+                res.value = (node.getDouble() < node2.getDouble())?1:0;
             } else if (znak.getType() == TokenType.LESS_EQUALLY) {
-                node.value = (node.getDouble() <= node2.getDouble())?1:0;
+                res.value = (node.getDouble() <= node2.getDouble())?1:0;
             }
         }
-        return node;
+        return res;
     }
 
 
@@ -751,7 +767,8 @@ public class Diagram extends ClassicDiagram {
                 int i = index.getInteger();
                 next(TokenType.CLOSE_SQUARE, "Ожидался символ ]");
                 if (tree.findUpVarOrArray(tokenName.getText()) != null) {
-                    if (tree.findUpVarOrArray(tokenName.getText()).node.typeData == TypeData.DOUBLE) {
+                    TypeData typeData = tree.findUpVarOrArray(tokenName.getText()).node.typeData;
+                    if (typeData == TypeData.DOUBLE || typeData == TypeData.CHAR) {
                         String name = tokenName.getText();
                         if (tree.findUpVarOrArray(name).node.n <= i || i < 0) {
                             semPrintErrorMass("(1) " + i);
@@ -761,7 +778,10 @@ public class Diagram extends ClassicDiagram {
 
                         double a = 0;
                         if (fInits.peek()) {
-                             a = ((double[]) mass.value)[i];
+                            if (typeData == TypeData.DOUBLE)
+                                a = ((double[]) mass.value)[i];
+                            else
+                                a = ((char[]) mass.value)[i];
                         }
                         Node node;
                         if (mass.typeData == TypeData.DOUBLE) {
@@ -772,8 +792,6 @@ public class Diagram extends ClassicDiagram {
                             node.value = a;
                         }
                         return node;
-                    } else {
-
                     }
                     return tree.findUpVarOrArray(tokenName.getText()).node;
                 } else {
@@ -805,7 +823,7 @@ public class Diagram extends ClassicDiagram {
         } else if (token.getType() == TokenType.TYPE_DOUBLE) {
             return Node.createConst(TypeData.DOUBLE, Double.parseDouble(token.getText()));
         } else if (token.getType() == TokenType.TYPE_CHAR) {
-            return Node.createConst(TypeData.CHAR, token.getText());
+            return Node.createConst(TypeData.CHAR, (int)token.getText().charAt(0));
         } else {
             return Node.createConst(TypeData.STRING, token.getText());
         }
