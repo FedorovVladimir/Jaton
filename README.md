@@ -287,7 +287,7 @@ class Main {
         double d = D;
         while (d > 0) {
             println("Два корня");
-            sqrt();
+            sqrtNewton();
             println("x1=" + (-b+sqrt) / (2*a));
             println("x2=" + (-b-sqrt) / (2*a));
             d = 0;
@@ -297,7 +297,7 @@ class Main {
     void root0() {
         double d = D;
         while (d < 0) {
-            print("Нет корней");
+            println("Нет корней");
             d = 0;
         }
     }
@@ -317,24 +317,17 @@ class Main {
         }
     }
 
-    void sqrt() {
-        sqrt = 0;
-        while(sqrt * sqrt <= D) {
-            sqrt = sqrt + 1;
+    void sqrtNewton() {
+        double x = 1;
+        double xold = x;
+        double A = D;
+        x=(x+A/x) / 2.0;
+        while (x != xold) {
+            xold = x;
+            x = (x+A/x) / 2.0;
         }
-        sqrt = sqrt - 1;
-
-        while(sqrt * sqrt <= D) {
-            sqrt = sqrt + 0.1;
-        }
-        sqrt = sqrt - 0.1;
-
-        while(sqrt * sqrt <= D) {
-            sqrt = sqrt + 0.01;
-        }
-        sqrt = sqrt - 0.01;
-
-        println("sqrt(d)≈" + sqrt);
+        sqrt = x;
+        println("Sqrt=" + sqrt);
     }
 }
 ```
